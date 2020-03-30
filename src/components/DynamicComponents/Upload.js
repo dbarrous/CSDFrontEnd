@@ -37,6 +37,7 @@ const Wrapper = styled.a`
   @media screen and (max-width:430px){
     width:90%;
   }
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
 `;
 const InnerWrapper = styled.div`
   width: 97.5%;

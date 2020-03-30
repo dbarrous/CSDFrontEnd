@@ -41,6 +41,9 @@ const Main = styled.div`
     opacity: 0;
     transition: opacity 100ms ease-in-out;
   }
+  -webkit-box-shadow: 0 3px 2px #777;
+	-moz-box-shadow: 0 3px 2px #777;
+
 `;
 const Footer = styled.section`
   background-color: var(--secondary);

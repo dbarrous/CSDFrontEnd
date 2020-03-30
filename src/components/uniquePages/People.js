@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../DynamicComponents/Title";
 import useFetch from "../useFetch";
+import PersonComponent from "../../components/DynamicComponents/PersonComponent";
 
 const PeoplePage = styled.section`
   width: 100%;
@@ -24,7 +25,7 @@ const PeopleLandingPage = styled.article`
 
 const PeopleSection = styled.section`
   display: flex;
-  max-width: 90%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 `;
@@ -46,16 +47,16 @@ const SidebarHeader = styled.h4`
 `;
 
 const People = () => {
-  const res = useFetch("http://173.244.1.41:1337/advising-Pages");
-  // if (res.isLoading === false) {
-  //   res.response.map(item => console.log(item));
-  // }
+  const res = useFetch("http://173.244.1.41:1337/people");
 
   return (
     <PeoplePage>
       <PeopleLandingPage>
         <PeopleSection>
           <Title>People</Title>
+          {res.isLoading === false
+            ? res.response.map(item => <PersonComponent {...item} />)
+            : null}
         </PeopleSection>
       </PeopleLandingPage>
       <Sidebar>
