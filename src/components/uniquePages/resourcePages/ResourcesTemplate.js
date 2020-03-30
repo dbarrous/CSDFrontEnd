@@ -100,7 +100,6 @@ const ResourcesTemplate = ({ match }) => {
       }
     });
   }
-  console.log(extras);
   return (
     <ResourcesPage>
       <ResourcesLandingPage>
