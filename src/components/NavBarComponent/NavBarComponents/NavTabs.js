@@ -56,7 +56,7 @@ const NavTabs = props => {
         </StyledLink>
       </StyledLi>
       <StyledLi>
-        <StyledLink exact to="/resources" activeStyle={activeStyles}>
+        <StyledLink exact to="/advising" activeStyle={activeStyles}>
           Resources &amp; Advising
         </StyledLink>
       </StyledLi>

@@ -8,6 +8,8 @@ const NavBarContainer = styled.section`
   width: 100%;
   height: 100%;
   display: grid;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   grid-template-columns: 0.75fr 1.25fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "Logo ." "Logo  NavLinks";

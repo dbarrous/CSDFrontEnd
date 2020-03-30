@@ -25,9 +25,9 @@ const NavLogo = props => {
     <LogoContainer>
       <Logo>
         <Link to="/">
-          <source srcSet="images/logo.webp" />
-          <source srcSet="images/logo.svg" />
-          <Image srcSet="images/logo.png" alt="Salem State Logo" />
+          <source srcSet="/images/logo.webp" />
+          <source srcSet="/images/logo.svg" />
+          <Image srcSet="/images/logo.png" alt="Salem State Logo" />
         </Link>
       </Logo>
     </LogoContainer>

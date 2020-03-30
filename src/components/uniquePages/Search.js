@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const SearchPageWrapper = styled.section`
   width: 100%;
-  height: 100%;
+  min-height: 600px;
   display: flex;
   justify-content: center;
 `;
@@ -35,9 +35,14 @@ const StyledInput = styled.input`
   height: 12vh;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-
+  background: rgba(200, 200, 200, 0.3);
   font-size: 1.5rem;
   border: 0px;
+  padding-left: 10px;
+  @media screen and (max-width: 500px) {
+    width: 60vw;
+    font-size: 0.7 rem;
+  }
 `;
 const StyledButton = styled.button`
   width: 10vw;
@@ -58,11 +63,16 @@ const StyledButton = styled.button`
     background: var(--background);
     transition: 0s;
   }
+  @media screen and (max-width: 500px) {
+    width: 14vw;
+    font-size: 0.7 rem;
+  }
 `;
 const StyledForm = styled.form`
   width: 100%;
   height: 100%;
   display: flex;
+  margin: 5rem 0;
 `;
 const History = () => {
   const [search, setSearch] = useState("");

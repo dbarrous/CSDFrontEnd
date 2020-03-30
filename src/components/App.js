@@ -19,8 +19,12 @@ const Grid = styled.div`
 
 const Header = styled.section`
   background-color: var(--primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 `;
 const Main = styled.div`
+  min-height:700px
+  width:100%
   background-color: var(--background);
   .fade-enter {
     opacity: 0;

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-
 const Home = styled.div`
   width: 100%;
   height: 100%;
@@ -40,6 +39,7 @@ const StyledIframe = styled.iframe`
 height: 100%;
 width: 100%;
 overflow: hidden;
+
 
 @media screen and (max-width: 755px) {
   -moz-transform: scale(0.8, 0.8);
@@ -152,17 +152,12 @@ const ItemLink = styled(NavLink)`
 `;
 
 const HomePage = () => {
-  const [loading, setLoading] = useState("gray");
 
   return (
     <Home>
       <News>
         <NewsWrapper>
-          <StyledIframe
-            src="http://weblab.salemstate.edu/~coordenador/ToolBox/carousel.php"
-            onLoad={() => setLoading("none")}
-            style={{ backgroundImage: `${loading}` }}
-          />
+          <StyledIframe src="http://weblab.salemstate.edu/~coordenador/ToolBox/carousel.php" />
         </NewsWrapper>
       </News>
       <Links>

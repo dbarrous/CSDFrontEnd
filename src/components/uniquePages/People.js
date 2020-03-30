@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Title from "../DynamicComponents/Title";
+import useFetch from "../useFetch";
+
 const PeoplePage = styled.section`
   width: 100%;
-  height: 100%;
+  min-height: 600px;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: 100%;
@@ -29,13 +31,26 @@ const PeopleSection = styled.section`
 
 const Sidebar = styled.nav`
   grid-area: Sidebar;
-  background-color: #b2bec3;
+  background-color: var(--secondary);
   @media screen and (max-width: 500px) {
     display: none;
   }
 `;
+const SidebarHeader = styled.h4`
+  color: var(--background);
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem;
+  font-family: "Roboto", Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+`;
 
 const People = () => {
+  const res = useFetch("http://173.244.1.41:1337/advising-Pages");
+  // if (res.isLoading === false) {
+  //   res.response.map(item => console.log(item));
+  // }
+
   return (
     <PeoplePage>
       <PeopleLandingPage>
@@ -44,7 +59,7 @@ const People = () => {
         </PeopleSection>
       </PeopleLandingPage>
       <Sidebar>
-        <Title>Filter:</Title>
+        <SidebarHeader>Filter:</SidebarHeader>
       </Sidebar>
     </PeoplePage>
   );
