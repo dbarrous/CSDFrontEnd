@@ -7,14 +7,14 @@ const Wrapper = styled.div`
   display: flex;
   background: ${props =>
     props.status === "Full_Time"
-      ? "lightgreen"
+      ? "#2ECC40"
       : props.status === "Staff"
-      ? "lightblue"
+      ? "#39CCCC"
       : props.status === "Adjunct"
-      ? "lightorange"
+      ? "#85144b"
       : props.status === "Alumni"
-      ? "red"
-      : "lightgray"};
+      ? "#FF4136"
+      : "#AAAAAA"};
   color: white;
   margin: 1.5rem;
   border-radius: 10px;
@@ -25,6 +25,9 @@ const Wrapper = styled.div`
   }
   h4 {
     margin: 1rem;
+  }
+  @media screen and(max-width:500px) {
+    width: 100%;
   }
   box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #b3b3b3;
 `;

@@ -4,43 +4,33 @@ import styled from "styled-components";
 const Wrapper = styled.a`
   width: 45%;
   height: 4rem;
-  display:flex;
-  background: ${props =>
-    props.ext === ".pdf" || props.ext === ".java"
-      ? "#FF4136"
-      : props.ext === ".php"
-      ? "#6435C9"
-      : props.ext === ".docx" || props.ext === ".doc" || props.ext === ".css"
-      ? "#0074D9"
-      : props.ext === ".js"
-      ? "#FFBD28"
-      : "#B10DC9"};
-}
+  display: flex;
+  background: var(--secondary);
   color: #eee;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   margin: 1rem;
-  transition:0.25s;
-  :hover{
-    cursor:pointer;
-    background:#5F8FB4;
-    div{
+  transition: 0.25s;
+  :hover {
+    cursor: pointer;
+    background: #5f8fb4;
+    div {
       a {
         color: #5f8fb4;
       }
     }
   }
-  @media screen and (max-width:1000px){
-    width:80%;
+  @media screen and (max-width: 1000px) {
+    width: 80%;
   }
-  @media screen and (max-width:430px){
-    width:90%;
+  @media screen and (max-width: 430px) {
+    width: 90%;
   }
-  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #b3b3b3;
 `;
 const InnerWrapper = styled.div`
-  width: 97.5%;
+  width: 95%;
   height: 3rem;
   display: flex;
   background: #eee;

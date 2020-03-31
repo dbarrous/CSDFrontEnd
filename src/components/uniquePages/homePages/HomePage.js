@@ -11,7 +11,8 @@ const Home = styled.div`
   @media screen and (max-width: 900px) {
     grid-template-rows: 30% 70%;
   }
-  @media screen and (max-width: 430px) {
+
+  @media screen and (max-width: 650px) {
     grid-template-rows: 20% 80%;
   }
   @media screen and (max-width: 400px) {
@@ -152,7 +153,6 @@ const ItemLink = styled(NavLink)`
 `;
 
 const HomePage = () => {
-
   return (
     <Home>
       <News>

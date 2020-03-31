@@ -24,6 +24,8 @@ const DegreesLandingPage = styled.article`
   grid-area: DegreesLandingPage;
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const DegreesSection = styled.section`

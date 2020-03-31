@@ -23,6 +23,8 @@ const ResourcesPage = styled.section`
 const ResourcesLandingPage = styled.article`
   grid-area: DegreesLandingPage;
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
 `;
 

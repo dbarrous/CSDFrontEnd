@@ -117,7 +117,7 @@ const Wrapper = styled.div`
   }
   .Side-menu-default .item.item-level-1:hover,
   .Side-menu-default .item.item-level-1.active {
-    border-left: 4px solid #c4eaf2;
+    border-left: 4px solid var(--tertiary);
   }
 `;
 
