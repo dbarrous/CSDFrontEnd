@@ -25,7 +25,7 @@ const ItemLink = styled(NavLink)`
   display: block;
   font-size: 1.1rem;
   font-weight: bold;
-  color: var(--secondary);
+  color: var(--accent);
   margin: 1rem;
   transition: 0.5s;
   text-decoration: none;

@@ -16,8 +16,8 @@ const ResourcesPage = styled.section`
   grid-template-areas: " degreesLandingPage Sidebar";
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 100%;
-    grid-template-areas: " degreesLandingPage";
+    display: flex;
+    flex-direction: column;
   }
 `;
 const LandingPage = styled.article`
@@ -128,13 +128,15 @@ const Resources = () => {
           </AttachmentWrapper>
         </Section>
       </LandingPage>
-      <Sidebar>
-        <SidebarTitle>Links</SidebarTitle>
-        <StyledSideMenu
-          items={object}
-          onMenuItemClick={value => history.push(`/advising/${value}`)}
-        />
-      </Sidebar>
+      {degree.isLoading ? null : (
+        <Sidebar>
+          <SidebarTitle>Links</SidebarTitle>
+          <StyledSideMenu
+            items={object}
+            onMenuItemClick={value => history.push(`/advising/${value}`)}
+          />
+        </Sidebar>
+      )}
     </ResourcesPage>
   );
 };

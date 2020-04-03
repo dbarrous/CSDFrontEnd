@@ -16,8 +16,8 @@ const ResourcesPage = styled.section`
   grid-template-areas: " DegreesLandingPage Sidebar";
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 100%;
-    grid-template-areas: " DegreesLandingPage";
+    display: flex;
+    flex-direction: column;
   }
 `;
 const ResourcesLandingPage = styled.article`
@@ -31,6 +31,7 @@ const ResourcesLandingPage = styled.article`
 const ResourcesSection = styled.section`
   display: flex;
   max-width: 90%;
+  min-width: 80%;
   flex-direction: column;
   align-items: center;
 `;
@@ -74,6 +75,7 @@ const ResourcesTemplate = ({ match }) => {
   const history = useHistory();
   let title = "";
   let content = "";
+  let uid = "";
   let extras = [];
 
   if (res.isLoading === false && degree.isLoading === false) {
@@ -91,6 +93,7 @@ const ResourcesTemplate = ({ match }) => {
       if (page.UID === match.params.id) {
         title = page.Webpage_Title;
         content = page.Webpage_Text;
+        uid = page.UID;
         extras = page.Extras;
       }
 
@@ -135,13 +138,16 @@ const ResourcesTemplate = ({ match }) => {
           </AttachmentWrapper>
         </ResourcesSection>
       </ResourcesLandingPage>
-      <Sidebar>
-        <SidebarTitle>Links</SidebarTitle>
-        <StyledSideMenu
-          items={object}
-          onMenuItemClick={value => history.push(`/advising/${value}`)}
-        />
-      </Sidebar>
+      {degree.isLoading ? null : (
+        <Sidebar>
+          <SidebarTitle>Links</SidebarTitle>
+          <StyledSideMenu
+            items={object}
+            activeItem={uid}
+            onMenuItemClick={value => history.push(`/advising/${value}`)}
+          />
+        </Sidebar>
+      )}
     </ResourcesPage>
   );
 };

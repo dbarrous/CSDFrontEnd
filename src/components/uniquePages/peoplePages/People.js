@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "../DynamicComponents/Title";
-import useFetch from "../useFetch";
-import PersonComponent from "../../components/DynamicComponents/PersonComponent";
+import Title from "../../DynamicComponents/Title";
+import useFetch from "../../useFetch";
+import PersonComponent from "../../DynamicComponents/PersonComponent";
 
 const PeoplePage = styled.section`
   width: 100%;
@@ -30,6 +30,14 @@ const PeopleSection = styled.section`
   align-items: center;
 `;
 
+const PersonWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
 const Sidebar = styled.nav`
   grid-area: Sidebar;
   background-color: var(--secondary);
@@ -54,13 +62,18 @@ const People = () => {
       <PeopleLandingPage>
         <PeopleSection>
           <Title>People</Title>
-          {res.isLoading === false
-            ? res.response.map(item => <PersonComponent {...item} />)
-            : null}
+          <PersonWrapper>
+            {res.isLoading === false
+              ? res.response.map(item => <PersonComponent {...item} />)
+              : null}
+          </PersonWrapper>
         </PeopleSection>
       </PeopleLandingPage>
       <Sidebar>
         <SidebarHeader>Filter:</SidebarHeader>
+        {/* <StyledSideMenu>
+          <Item>Hello</Item>
+        </StyledSideMenu> */}
       </Sidebar>
     </PeoplePage>
   );

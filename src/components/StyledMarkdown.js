@@ -1,10 +1,9 @@
-
 import Markdown from "react-markdown";
 import styled from "styled-components";
 
 const StyledMarkdown = styled(Markdown)`
   img {
-    width: auto;
+    max-width: 100%;
     height: 80%;
     margin: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -89,6 +88,7 @@ const StyledMarkdown = styled(Markdown)`
     width: 60%;
     margin: 1rem auto;
     text-align: center;
+    list-style-type: decimal;
   }
   li {
     margin: 0.75rem;
@@ -99,26 +99,35 @@ const StyledMarkdown = styled(Markdown)`
   }
 
   table {
-    width: 70%;
-    margin: 1rem auto;
+    min-width: 60vw;
+    max-width: 90vw;
+    margin: 2rem auto;
   }
   thead {
     color: var(--background);
     background: var(--primary);
+    border: 1px solid var(--primary);
+  }
+  th {
+    padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
   }
   tbody {
     border: 1px solid black;
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
-    text-align: center;
-    width: 600px;
   }
-  tr {
+  tr:nth-child(even) {
     border: 1px solid black;
+    background: rgba(0, 0, 0, 0.1);
   }
   td {
     border: 1px solid black;
+    width: 10rem;
     padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
   }
   em {
     text-decoration: underline;

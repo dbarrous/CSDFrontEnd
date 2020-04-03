@@ -9,17 +9,27 @@ const Wrapper = styled.a`
   color: #eee;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 1rem;
   transition: 0.25s;
   :hover {
     cursor: pointer;
-    background: #5f8fb4;
+    position: relative;
+    bottom: 2px;
+    -webkit-box-shadow: 0 3px 2px #777;
+    -moz-box-shadow: 0 3px 2px #777;
+    box-shadow: 0 3px 2px #777;
+    background: var(--accent);
     div {
-      a {
-        color: #5f8fb4;
+      p {
+        color: var(--accent);
       }
     }
+  }
+  :active {
+    position: relative;
+    bottom: -2px;
+    box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #b3b3b3;
   }
   @media screen and (max-width: 1000px) {
     width: 80%;
@@ -34,7 +44,7 @@ const InnerWrapper = styled.div`
   height: 3rem;
   display: flex;
   background: #eee;
-  border-radius: 5px;
+  border-radius: 2.5px;
   align-items: center;
   :hover {
     cursor: pointer;
@@ -47,34 +57,9 @@ const FileName = styled.p`
   font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  transition:0.25s;
+  transition: 0.25s;
   text-align: center;
-  color: ${props =>
-    props.ext === ".pdf" || props.ext === ".java"
-      ? "#FF4136"
-      : props.ext === ".php"
-      ? "#6435C9"
-      : props.ext === ".docx" || props.ext === ".doc" || props.ext === ".css"
-      ? "#0074D9"
-      : props.ext === ".js"
-      ? "#FFBD28"
-      : "#B10DC9"};
-
-      
-}
-
-  :visited {
-    color: ${props =>
-      props.ext === ".pdf" || props.ext === ".java"
-        ? "#FF4136"
-        : props.ext === ".php"
-        ? "#6435C9"
-        : props.ext === ".docx" || props.ext === ".doc" || props.ext === ".css"
-        ? "#0074D9"
-        : props.ext === ".js"
-        ? "#FFBD28"
-        : "#B10DC9"};
-  }
+  color: var(--secondary);
 `;
 const NameWrapper = styled.div`
   width: 100%;
@@ -112,7 +97,7 @@ const Upload = props => {
   };
 
   return (
-    <Wrapper ext={props.ext} href={props.url}>
+    <Wrapper ext={props.ext} href={props.url} target="_blank">
       <InnerWrapper>
         <StyledIcon src={iconPicker(props.ext)} />
 

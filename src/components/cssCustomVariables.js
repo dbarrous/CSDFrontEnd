@@ -4,7 +4,7 @@ export const cssCustomVariables = css`
   :root {
     --primary: #001f5b;
     --secondary: #d24700;
-    --accent: #ffbd28;
+    --accent: #008bd2;
     --tertiary: #5f8fb4;
     --background: #eee;
     --mobile: 375px;

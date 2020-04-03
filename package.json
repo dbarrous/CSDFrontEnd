@@ -18,6 +18,7 @@
     "react-scripts": "3.4.0",
     "react-sidemenu": "^1.1.0",
     "react-transition-group": "^4.3.0",
+    "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.0.1"
   },
   "scripts": {

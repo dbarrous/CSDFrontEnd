@@ -12,7 +12,7 @@ const NavBarContainer = styled.section`
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   grid-template-columns: 0.75fr 1.25fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "Logo ." "Logo  NavLinks";
+  grid-template-areas: "Logo Search" "Logo  NavLinks";
   @media screen and (max-width: 1050px) {
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "Logo Cheeseburger" "Logo  Cheeseburger";
@@ -41,12 +41,58 @@ const CheeseburgerMenuWrapper = styled.nav`
     justify-content: flex-end;
   }
 `;
+
+const SearchWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const SearchBar = styled.input`
+  background: var(--primary);
+  color: white;
+  height: 50%;
+  border: none;
+  font-family: Roboto, sans-serif, FontAwesome;
+  width: 15%;
+  padding: 5px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  transition: 0.25s;
+  text-align: right;
+  cursor: pointer;
+  text-shadow: rgba(0, 0, 0, 0.2);
+  ::placeholder {
+    font-size: 1.5rem;
+    color: var(--background);
+  }
+  :active {
+    width: 30%;
+    background: #eee;
+    color: var(--primary);
+  }
+  :focus {
+    width: 30%;
+    background: #eee;
+    color: var(--primary);
+    outline: none;
+  }
+`;
 const NavBar = props => {
   return (
     <NavBarContainer>
       <LogoWrapper>
         <NavLogo />
       </LogoWrapper>
+      <SearchWrapper>
+        <SearchBar placeholder="&#xF002;" />
+      </SearchWrapper>
       <NavTabsWrapper>
         <NavTabs />
       </NavTabsWrapper>

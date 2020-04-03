@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     width: 100%;
   }
   .Side-menu .children {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--primary);
     transition: max-height 0.7s ease-in;
     overflow: hidden;
   }
@@ -76,6 +76,9 @@ const Wrapper = styled.div`
   .Side-menu .item.item-level-1 > .item-title {
     height: 45px;
   }
+  .Side-menu .item.item-level-1 {
+    background: var(--primary);
+  }
   .Side-menu .item .children {
     padding-left: 25px;
   }
@@ -113,18 +116,27 @@ const Wrapper = styled.div`
     color: white;
   }
   .Side-menu-default .item.item-level-1:hover > .item-title {
-    background-color: #435863;
+    transition: 0.5s ease-in-out;
+    background-color: var(--secondary);
   }
   .Side-menu-default .item.item-level-1:hover,
   .Side-menu-default .item.item-level-1.active {
-    border-left: 4px solid var(--tertiary);
+    border-left: 4px solid var(--secondary);
+  }
+
+  .item.item-level-2.active {
+    color: ;
   }
 `;
 
 const StyledSideMenu = props => {
   return (
     <Wrapper>
-      <SideMenu items={props.items} onMenuItemClick={props.onMenuItemClick} />
+      <SideMenu
+        activeItem={props.activeItem}
+        items={props.items}
+        onMenuItemClick={props.onMenuItemClick}
+      />
     </Wrapper>
   );
 };

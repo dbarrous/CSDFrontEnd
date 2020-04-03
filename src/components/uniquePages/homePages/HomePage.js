@@ -161,7 +161,7 @@ const HomePage = () => {
         </NewsWrapper>
       </News>
       <Links>
-        <PageHeader>Welcome to our Computer Science Department</PageHeader>
+        <PageHeader>Welcome to the Computer Science Department</PageHeader>
         <LinksWrapper>
           <ItemContainer>
             <ItemImage src="images/ourMission.png" />

@@ -51,25 +51,25 @@ const NavTabs = props => {
         </StyledLink>
       </StyledLi>
       <StyledLi>
-        <StyledLink exact to="/courses" activeStyle={activeStyles}>
+        <StyledLink to="/courses" activeStyle={activeStyles}>
           Degrees &amp; Courses
         </StyledLink>
       </StyledLi>
       <StyledLi>
-        <StyledLink exact to="/advising" activeStyle={activeStyles}>
+        <StyledLink to="/advising" activeStyle={activeStyles}>
           Resources &amp; Advising
         </StyledLink>
       </StyledLi>
       <StyledLi>
-        <StyledLink exact to="/people" activeStyle={activeStyles}>
+        <StyledLink to="/people" activeStyle={activeStyles}>
           People
         </StyledLink>
       </StyledLi>
-      <StyledLi>
+      {/* <StyledLi>
         <StyledLink exact to="/search" activeStyle={activeStyles}>
           Search
         </StyledLink>
-      </StyledLi>
+      </StyledLi> */}
     </NavLinksContainer>
   );
 };

@@ -128,13 +128,15 @@ const Degrees = () => {
           </AttachmentWrapper>
         </Section>
       </LandingPage>
-      <Sidebar>
-        <SidebarTitle>Links</SidebarTitle>
-        <StyledSideMenu
-          items={object}
-          onMenuItemClick={value => history.push(`/courses/${value}`)}
-        />
-      </Sidebar>
+      {degree.isLoading ? null : (
+        <Sidebar>
+          <SidebarTitle>Links</SidebarTitle>
+          <StyledSideMenu
+            items={object}
+            onMenuItemClick={value => history.push(`/courses/${value}`)}
+          />
+        </Sidebar>
+      )}
     </DegreesPage>
   );
 };

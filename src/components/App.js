@@ -3,7 +3,6 @@ import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 import { HamburgerArrow } from "react-animated-burgers";
-
 import cssReset from "./cssReset";
 import cssCustomVariables from "./cssCustomVariables";
 import Routes from "./Routes.js";
@@ -149,6 +148,51 @@ const FooterText = styled.p`
   }
 `;
 
+const SearchBar = styled.input`
+  background: var(--primary);
+  color: white;
+  height: 50%;
+  border: none;
+  font-family: Roboto, sans-serif, FontAwesome;
+  width: 15%;
+  padding: 5px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  transition: 0.25s;
+  text-align: right;
+  ::placeholder {
+    font-size: 1.5rem;
+    color: var(--background);
+  }
+  :active {
+    width: 30%;
+    background: #eee;
+    color: var(--primary);
+  }
+  :focus {
+    width: 30%;
+    background: #eee;
+    color: var(--primary);
+    outline: none;
+  }
+  @media screen and (max-width: 1050px) {
+    height: 100%;
+    text-align: left;
+    :active {
+      width: 40%;
+      background: #eee;
+      color: var(--primary);
+    }
+    :focus {
+      width: 40%;
+      background: #eee;
+      color: var(--primary);
+      outline: none;
+    }
+  }
+`;
+
 const App = () => {
   const [menuToggle, setMenuToggle] = useState(false);
 
@@ -225,7 +269,7 @@ const App = () => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <StyledLink exact to="/resources" activeStyle={activeStyles}>
+                  <StyledLink exact to="/advising" activeStyle={activeStyles}>
                     Resources &amp; Advising
                   </StyledLink>
                 </StyledLi>
@@ -235,9 +279,7 @@ const App = () => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <StyledLink exact to="/search" activeStyle={activeStyles}>
-                    Search
-                  </StyledLink>
+                  <SearchBar placeholder="&#xF002;" />
                 </StyledLi>
               </NavLinksContainer>
             </OffCanvasMenuWrapper>

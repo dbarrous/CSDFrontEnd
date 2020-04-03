@@ -16,8 +16,8 @@ const DegreesPage = styled.section`
   grid-template-areas: " DegreesLandingPage Sidebar";
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 100%;
-    grid-template-areas: " DegreesLandingPage";
+    display: flex;
+    flex-direction: column;
   }
 `;
 const DegreesLandingPage = styled.article`
@@ -31,6 +31,7 @@ const DegreesLandingPage = styled.article`
 const DegreesSection = styled.section`
   display: flex;
   max-width: 90%;
+
   flex-direction: column;
   align-items: center;
 `;
@@ -73,6 +74,7 @@ const DegreesTemplate = ({ match }) => {
   const history = useHistory();
   let title = "";
   let content = "";
+  let uid = "";
   let extras = [];
   if (res.isLoading === false && degree.isLoading === false) {
     res.response.map(page => {
@@ -89,6 +91,7 @@ const DegreesTemplate = ({ match }) => {
       if (page.UID === match.params.id) {
         title = page.Webpage_Title;
         content = page.Webpage_Text;
+        uid = page.UID;
         extras = page.Extras;
       }
 
@@ -134,13 +137,16 @@ const DegreesTemplate = ({ match }) => {
           </AttachmentWrapper>
         </DegreesSection>
       </DegreesLandingPage>
-      <Sidebar>
-        <SidebarTitle>Links</SidebarTitle>
-        <StyledSideMenu
-          items={object}
-          onMenuItemClick={value => history.push(`/courses/${value}`)}
-        />
-      </Sidebar>
+      {degree.isLoading ? null : (
+        <Sidebar>
+          <SidebarTitle>Links</SidebarTitle>
+          <StyledSideMenu
+            items={object}
+            activeItem={uid}
+            onMenuItemClick={value => history.push(`/courses/${value}`)}
+          />
+        </Sidebar>
+      )}
     </DegreesPage>
   );
 };
