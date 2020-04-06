@@ -75,7 +75,7 @@ const StyledForm = styled.form`
 `;
 const Search = ({match}) => {
   const [search, setSearch] = useState(match.params.id);
-  console.log(match);
+ 
   return (
     <SearchPageWrapper>
       <SearchSection>

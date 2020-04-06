@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Title from "../../DynamicComponents/Title";
 import useFetch from "../../useFetch";
 import PersonComponent from "../../DynamicComponents/PersonComponent";
-import { Checkbox } from "semantic-ui-react";
 
 const PeoplePage = styled.section`
   width: 100%;
@@ -205,7 +204,6 @@ const People = () => {
         <label for="Retired_Departed">Retired/Departed</label></CheckboxWrapper> */}
    </AllCheckboxWrapper>
        
-        {console.log(filter)}
       </Sidebar>
     </PeoplePage>
   );

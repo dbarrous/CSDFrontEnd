@@ -106,7 +106,7 @@ width:100%;
 `;
 const PeopleTemplate = ({ match }) => {
   const res = useFetch(`http://173.244.1.41:1337/people/${match.params.id}`);
-  console.log(res);
+ 
   return (
     <PeoplePageWrapper>
       <PeopleSection>
