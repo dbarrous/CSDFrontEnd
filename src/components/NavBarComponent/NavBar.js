@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavLogo from "./NavBarComponents/NavLogo";
 import NavTabs from "./NavBarComponents/NavTabs";
 import { HamburgerArrow } from "react-animated-burgers";
+import {useHistory} from "react-router-dom";
 
 const NavBarContainer = styled.section`
   width: 100%;
@@ -85,13 +86,22 @@ const SearchBar = styled.input`
   }
 `;
 const NavBar = props => {
+  const [searchbar, setSearchbar] = React.useState("");
+  const history = useHistory();
+  const handleSubmit =(key)=>{
+    if(key === "Enter"){
+      
+      history.push(`/search/${searchbar}`);
+      setSearchbar("");
+    }
+  }
   return (
     <NavBarContainer>
       <LogoWrapper>
         <NavLogo />
       </LogoWrapper>
       <SearchWrapper>
-        <SearchBar placeholder="&#xF002;" />
+        <SearchBar placeholder="&#xF002;" value={searchbar} onChange={(event)=>setSearchbar(event.target.value)} onKeyDown={event=>handleSubmit(event.key)} />
       </SearchWrapper>
       <NavTabsWrapper>
         <NavTabs />

@@ -11,9 +11,9 @@ const ResourcesPage = styled.section`
   width: 100%;
   min-height: 600px;
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
-  grid-template-areas: " degreesLandingPage Sidebar";
+  grid-template-areas: "Sidebar ResourceLandingPage";
 
   @media screen and (max-width: 500px) {
     display: flex;
@@ -21,7 +21,7 @@ const ResourcesPage = styled.section`
   }
 `;
 const LandingPage = styled.article`
-  grid-area: degreesLandingPage;
+  grid-area: ResourceLandingPage;
   background-color: var(--background);
   display: flex;
   justify-content: center;

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Title from "../DynamicComponents/Title";
 import styled from "styled-components";
-
 const SearchPageWrapper = styled.section`
   width: 100%;
   min-height: 600px;
@@ -74,9 +73,9 @@ const StyledForm = styled.form`
   display: flex;
   margin: 5rem 0;
 `;
-const History = () => {
-  const [search, setSearch] = useState("");
-
+const Search = ({match}) => {
+  const [search, setSearch] = useState(match.params.id);
+  console.log(match);
   return (
     <SearchPageWrapper>
       <SearchSection>
@@ -98,4 +97,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default Search;

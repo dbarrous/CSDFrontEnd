@@ -71,7 +71,7 @@ const StyledMarkdown = styled(Markdown)`
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   }
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #111111;
     font-family: "Perpetua", serif;
     line-height: 1.5rem;

@@ -275,7 +275,7 @@ const App = () => {
                 </StyledLi>
                 <StyledLi>
                   <StyledLink exact to="/people" activeStyle={activeStyles}>
-                    People
+                    Faculty &amp; Staff
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>

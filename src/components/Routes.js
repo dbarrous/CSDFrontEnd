@@ -31,7 +31,9 @@ const Routes = ({ location }) => {
             <Route path="/mission" component={Mission} />
             <Route path="/history" component={History} />
             <Route path="/contact" component={Contact} />
-            <Route path="/search" component={Search} />
+            <Route exact path="/search" component={Search} />
+
+            <Route exact path="/search/:id" component={Search} />
             <Route exact path="/courses/:id" component={DegreeTemplate} />
             <Route exact path="/advising/:id" component={ResourcesTemplate} />
             <Route exact path="/people/:id" component={PeopleTemplate} />

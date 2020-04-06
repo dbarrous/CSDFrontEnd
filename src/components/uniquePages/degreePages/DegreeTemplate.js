@@ -11,9 +11,9 @@ const DegreesPage = styled.section`
   width: 100%;
   min-height: 600px;
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
-  grid-template-areas: " DegreesLandingPage Sidebar";
+  grid-template-areas: "Sidebar DegreesLandingPage";
 
   @media screen and (max-width: 500px) {
     display: flex;

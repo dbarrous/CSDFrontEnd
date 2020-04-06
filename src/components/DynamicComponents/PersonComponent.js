@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 const Wrapper = styled.div`
-  width: 40%;
+  width: 45%;
   height: 225px;
   display: flex;
   text-decoration: none;
@@ -53,7 +53,7 @@ const StyledItem = styled.h4`
   font-size: 0.8rem;
 `;
 const Position = styled.h4`
-  font-family: Roboto;
+  font-family: Roboto,sans-serif;
   font-size: 0.75rem;
   margin: 1rem;
 `;
@@ -100,27 +100,28 @@ const PersonComponent = props => {
       <StyledTextContainer>
         <Name>{`${props.First_Name} ${props.Last_Name}`}</Name>
         <Position>{`${props.Position}`}</Position>
-        {props.Phone__Number === "" ? null : (
+        {props.Phone__Number === "" || props.Phone__Number === null? null : (
           <StyledItem>
             <StyledSpan>Phone: </StyledSpan>
             {props.Phone__Number}
           </StyledItem>
         )}
-        {props.Email === null ? null : (
+        {props.Email === null || props.Email === ""? null : (
           <StyledItem>
             <StyledSpan>Email: </StyledSpan>
             {props.Email}
           </StyledItem>
         )}
-        {props.RoomNumb === "" ? null : (
+        {props.RoomNumb === "" || props.RoomNumb === null? null : (
           <StyledItem>
             <StyledSpan>Office: </StyledSpan>
             {props.RoomNumb}
           </StyledItem>
         )}
-        <MoreInfo onClick={() => history.push(`/people/${props.id}`)}>
+        {props.Page_Info === "" || props.Page_Info === null? null : (<MoreInfo onClick={() => history.push(`/people/${props.id}`)}>
           More Info - <Icon> &#xf05a;</Icon>
-        </MoreInfo>
+        </MoreInfo>)}
+        
 
         {/* {props.Office_Hours === "" || props.Office_Hours === null ? null : (
           <h4>{`Office Hours: ${props.Office_Hours}`}</h4>

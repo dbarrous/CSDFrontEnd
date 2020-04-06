@@ -52,10 +52,11 @@ const Wrapper = styled.div`
     padding-right: 25px;
   }
   .Side-menu .item .item-title {
-    height: 40px;
-    padding-top: 14px;
-    padding-left: 18px;
-    padding-right: 18px;
+    height: 60px;
+    padding:20px;
+    // padding-top: 14px;
+    // padding-left: 18px;
+    // padding-right: 18px;
     font-size: 14px;
     cursor: pointer !important;
   }

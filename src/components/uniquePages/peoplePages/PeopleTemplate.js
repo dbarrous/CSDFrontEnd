@@ -6,15 +6,24 @@ import { NavLink } from "react-router-dom";
 const PeoplePageWrapper = styled.section`
   width: 100%;
   min-height: 600px;
-  display: flex;
-  justify-content: center;
+  
 `;
 const PeopleSection = styled.section`
-  display: flex;
-  max-width: 75%;
-  flex-direction: column;
+width:80%;
+margin:0 auto;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "MainInfo SecInfo";
   @media screen and (max-width: 430px) {
     max-width: 100%;
+  }
+
+  @media screen and (max-width: 800px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
   }
 `;
 
@@ -22,9 +31,9 @@ const ItemLink = styled(NavLink)`
   font-family: "Roboto", sans-serif;
   text-align: center;
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: var(--accent);
+  color: var(--secondary);
   margin: 1rem;
   transition: 0.5s;
   text-decoration: none;
@@ -70,12 +79,38 @@ const AccentSpan = styled.span`
   color: var(--accent);
 `;
 
+const MainInfo  = styled.div`
+grid-area:MainInfo;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`;
+const SecInfo = styled.div`
+
+grid-area:SecInfo;
+width:100%;
+height:100%;
+margin:1rem;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`;
+
+const StyledHR = styled.hr`
+width:100%;
+
+`;
 const PeopleTemplate = ({ match }) => {
   const res = useFetch(`http://173.244.1.41:1337/people/${match.params.id}`);
   console.log(res);
   return (
     <PeoplePageWrapper>
       <PeopleSection>
+        <MainInfo>
         {res.isLoading ? (
           <img
             style={{ width: "100%" }}
@@ -95,29 +130,35 @@ const PeopleTemplate = ({ match }) => {
           />
         )}
 
-        {res.isLoading ? null : (
+        {res.isLoading || res.response.RoomNumb === null ||res.response.RoomNumb=== "" ? null : (
           <SecondaryText>
             <AccentSpan>Office: </AccentSpan>
             {res.response.RoomNumb}
           </SecondaryText>
         )}
-        {res.isLoading ? null : (
+        {res.isLoading || res.response.Email === null ||res.response.Email=== ""? null : (
           <SecondaryText>
             <AccentSpan>Email: </AccentSpan>
             {res.response.Email}
           </SecondaryText>
         )}
-        {res.isLoading ? null : (
+        {res.isLoading || res.response.Phone__Number === null ||res.response.Phone__Number=== ""? null : (
           <SecondaryText>
             <AccentSpan>Phone Number: </AccentSpan>
             {res.response.Phone__Number}
           </SecondaryText>
         )}
-        {res.isLoading ? null : (
-          <StyledMarkdown source={res.response.Page_Info} />
-        )}
+          <StyledHR/>
+         <ItemLink to="/people">Go Back to Faculty</ItemLink>
+         <StyledHR/>
+        </MainInfo>
 
-        <ItemLink to="/people">Go Back</ItemLink>
+        <SecInfo>{res.isLoading ? null : (
+          <StyledMarkdown source={res.response.Page_Info} />
+        )}</SecInfo>
+        
+
+       
       </PeopleSection>
     </PeoplePageWrapper>
   );
