@@ -17,11 +17,8 @@
     "react-offcanvas": "^0.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "react-search-fuse": "0.0.2",
     "react-sidemenu": "^1.1.0",
     "react-transition-group": "^4.3.0",
-    "react-use-fuse": "^0.5.2",
-    "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.0.1"
   },
   "scripts": {
