@@ -47,10 +47,13 @@ const StyledTextContainer = styled.div`
   width: 60%;
   height: 100%;
 `;
-const StyledItem = styled.h4`
+const StyledItem = styled.a`
   margin: 0.5rem 1rem;
+  display:block;
+  text-decoration:none;
   font-family: Roboto, sans-serif;
   font-size: 0.8rem;
+  color:var(--background);
 `;
 const Position = styled.h4`
   font-family: Roboto,sans-serif;
@@ -61,7 +64,7 @@ const StyledSpan = styled.span`
   color: var(--accent);
   font-weight: bolder;
 `;
-const MoreInfo = styled.a`
+const MoreInfo = styled.h4`
   text-align: left;
   display: inline-block;
   margin: 1rem;
@@ -101,13 +104,13 @@ const PersonComponent = props => {
         <Name>{`${props.First_Name} ${props.Last_Name}`}</Name>
         <Position>{`${props.Position}`}</Position>
         {props.Phone__Number === "" || props.Phone__Number === null? null : (
-          <StyledItem>
+          <StyledItem href={`tel: ${props.Phone__Number}`}>
             <StyledSpan>Phone: </StyledSpan>
             {props.Phone__Number}
           </StyledItem>
         )}
         {props.Email === null || props.Email === ""? null : (
-          <StyledItem>
+          <StyledItem href={`mailto: ${props.Email}`}>
             <StyledSpan>Email: </StyledSpan>
             {props.Email}
           </StyledItem>

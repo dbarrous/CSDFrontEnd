@@ -7,7 +7,6 @@ import cssReset from "./cssReset";
 import cssCustomVariables from "./cssCustomVariables";
 import Routes from "./Routes.js";
 import NavBar from "./NavBarComponent/NavBar";
-
 const CssReset = createGlobalStyle`${cssReset}`;
 const CssCustomVariables = createGlobalStyle`${cssCustomVariables}`;
 
@@ -136,13 +135,21 @@ const FooterSecondHalf = styled.div`
     align-items: center;
   }
 `;
-const FooterText = styled.p`
+const FooterText = styled.a`
   font-family: "Perpetua", serif;
   font-size: 0.8rem;
   color: var(--background);
   margin-left: 0.8rem;
   margin-right: 0.8rem;
   margin-top: 2px;
+  text-decoration:none;
+  transition:0.25s;
+  text-decoration-color:var(--accent);
+
+  :hover{
+    text-decoration:underline;
+    text-decoration-color:var(--accent);
+  }
   @media screen and (min-width: 1400px) {
     font-size: 1.2rem;
   }
@@ -193,14 +200,15 @@ const SearchBar = styled.input`
   }
 `;
 
-const App = () => {
+const App = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
-
+  const [keyword, setKeyword] = useState("");
   const activeStyles = {
     textDecoration: "underline",
     textDecorationColor: "#eee"
   };
 
+  
   return (
     <>
       <Router>
@@ -223,22 +231,20 @@ const App = () => {
               </Main>
               <Footer>
                 <FooterFirstHalf>
-                  <FooterText>Salem State University</FooterText>
-                  <FooterText>Computer Science Department</FooterText>
-                  <FooterText>MH 207</FooterText>
-                  <FooterText>
+                  <FooterText href="https://goo.gl/maps/3jQrbZWQAn3tieth7">Salem State University<br/>
+                  Computer Science Department<br/>MH 207<br/>
                     352 Lafayette Street, Salem, MA 01970-5353
                   </FooterText>
                 </FooterFirstHalf>
 
                 <FooterSecondHalf>
-                  <FooterText>
+                  <FooterText href="tel:(978) 542-6256">
                     Department Office Administrator: (978) 542-6256
                   </FooterText>
-                  <FooterText>
-                    Department Chairperson: (978) 542-6256
+                  <FooterText href="tel:(978) 542-6979">
+                    Department Chairperson: (978) 542-6979
                   </FooterText>
-                  <FooterText>Department Fax: (978) 542-7048</FooterText>
+                  <FooterText href="tel:(978) 542-7048">Department Fax: (978) 542-7048</FooterText>
                 </FooterSecondHalf>
               </Footer>
             </Grid>
@@ -279,7 +285,10 @@ const App = () => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <SearchBar placeholder="&#xF002;" />
+                  <SearchBar value={keyword} onChange={(e)=>setKeyword(e.target.value) } placeholder="&#xF002;" />
+                  <StyledLink exact to={`/search/${keyword}`} activeStyle={activeStyles}>
+                    Search
+                  </StyledLink>
                 </StyledLi>
               </NavLinksContainer>
             </OffCanvasMenuWrapper>

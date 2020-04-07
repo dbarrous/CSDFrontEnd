@@ -67,11 +67,12 @@ const Position = styled.h3`
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 `;
-const SecondaryText = styled.p`
+const SecondaryText = styled.a`
   font-family: Roboto, serif;
   font-size: 1.2rem;
   color: var(--secondary);
   text-align: center;
+  text-decoration:none;
   margin: 0.75rem;
 `;
 
@@ -137,13 +138,13 @@ const PeopleTemplate = ({ match }) => {
           </SecondaryText>
         )}
         {res.isLoading || res.response.Email === null ||res.response.Email=== ""? null : (
-          <SecondaryText>
+          <SecondaryText href={`mailto: ${res.response.Email}`}>
             <AccentSpan>Email: </AccentSpan>
             {res.response.Email}
           </SecondaryText>
         )}
         {res.isLoading || res.response.Phone__Number === null ||res.response.Phone__Number=== ""? null : (
-          <SecondaryText>
+          <SecondaryText href={`tel:${res.response.Phone__Number}`}>
             <AccentSpan>Phone Number: </AccentSpan>
             {res.response.Phone__Number}
           </SecondaryText>
