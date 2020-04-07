@@ -18,6 +18,9 @@ const Home = styled.div`
   @media screen and (max-width: 400px) {
     grid-template-rows: 15% 85%;
   }
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const News = styled.div`
   grid-area: News;

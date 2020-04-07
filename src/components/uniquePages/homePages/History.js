@@ -9,6 +9,9 @@ const HistoryPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const HistorySection = styled.section`
   display: flex;

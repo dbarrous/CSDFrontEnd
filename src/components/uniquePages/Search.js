@@ -10,6 +10,9 @@ const SearchPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const SearchSection = styled.section`
   display: flex;
@@ -20,7 +23,7 @@ const SearchSection = styled.section`
 
 const SearchLink = styled(NavLink)`
   font-family: "Roboto", sans-serif;
-  text-align: center;
+  text-align: left;
   display: block;
   font-size: 1.1rem;
   font-weight: bold;
@@ -166,8 +169,8 @@ const Search = ({ match }) => {
                         : `Resources & Advising -> ${
                           page.item.folder_for_advising_page === null
                               ? ""
-                              : page.item.folder_for_advising_page.Folder_name
-                        } -> `}
+                              : `${page.item.folder_for_advising_page.Folder_name} -> 
+                        `} `}
                     </StyledSpan>{" "}
                     {page.item.Webpage_Title}
                   </SearchLink>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SideMenu from "react-sidemenu";
 const Wrapper = styled.div`
   .Side-menu {
-    width: auto;
+   
     max-width: 400px;
     width: 100%;
   }

@@ -19,6 +19,9 @@ const DegreesPage = styled.section`
     display: flex;
     flex-direction: column;
   }
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const LandingPage = styled.article`
   grid-area: DegreesLandingPage;

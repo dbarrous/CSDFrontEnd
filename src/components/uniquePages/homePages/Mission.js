@@ -10,6 +10,9 @@ const MissionPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const MissionSection = styled.section`
   display: flex;

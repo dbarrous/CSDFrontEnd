@@ -16,6 +16,9 @@ const PeoplePage = styled.section`
     display:flex;
     flex-direction:column;
   }
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
 `;
 const PeopleLandingPage = styled.article`
   grid-area: People;

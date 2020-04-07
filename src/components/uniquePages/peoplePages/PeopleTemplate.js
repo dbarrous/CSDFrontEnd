@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 const PeoplePageWrapper = styled.section`
   width: 100%;
   min-height: 600px;
+  @media screen and (min-height:900px){
+    min-height:1000px;
+  }
   
 `;
 const PeopleSection = styled.section`

@@ -5,7 +5,8 @@ const StyledMarkdown = styled(Markdown)`
   img {
     max-width: 100%;
     height: 80%;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 
@@ -75,19 +76,20 @@ const StyledMarkdown = styled(Markdown)`
     color: #111111;
     font-family: "Perpetua", serif;
     line-height: 1.5rem;
-    text-align: center;
+    text-align: left;
     margin: 1.5rem;
+    display:flex;
   }
   ul {
     width: 60%;
     margin: 1rem auto;
     list-style-type: circle;
-    text-align: center;
+    text-align: left;
   }
   ol {
     width: 60%;
     margin: 1rem auto;
-    text-align: center;
+    text-align: left;
     list-style-type: decimal;
   }
   li {

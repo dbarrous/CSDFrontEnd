@@ -32,6 +32,9 @@ const Wrapper = styled.div`
     width: 95vw;
     height: 250px;
   }
+  @media screen and (min-height:900px){
+    min-height:275px;
+  }
 `;
 const Name = styled.h3`
   font-size: 1.5rem;
