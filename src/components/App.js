@@ -156,8 +156,8 @@ const FooterText = styled.a`
 `;
 
 const SearchBar = styled.input`
-  background: var(--primary);
-  color: white;
+  background: var(--background);
+  color: var(--primary);
   height: 50%;
   border: none;
   font-family: Roboto, sans-serif, FontAwesome;
@@ -170,7 +170,7 @@ const SearchBar = styled.input`
   text-align: right;
   ::placeholder {
     font-size: 1.5rem;
-    color: var(--background);
+    color: var(--primary);
   }
   :active {
     width: 30%;
