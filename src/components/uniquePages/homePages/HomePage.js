@@ -133,6 +133,7 @@ const ItemParagraph = styled.p`
   font-weight: regular;
   color: var(--primary);
   margin-top: 1rem;
+
 `;
 
 const ItemImage = styled.img`
@@ -165,7 +166,7 @@ const HomePage = () => {
         <LinksWrapper>
           <ItemContainer>
             <ItemImage src="images/ourMission.png" />
-            <ItemTitle>Our Mission</ItemTitle>
+            <ItemTitle>Mission Statement</ItemTitle>
             <ItemParagraph>
               Salem State's mission is to provide a high quality,
               student-centered education that prepares a diverse community of
