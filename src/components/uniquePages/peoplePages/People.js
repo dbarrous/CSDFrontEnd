@@ -150,13 +150,13 @@ const People = () => {
   if(res.isLoading === false){
   FilteredContents = res.response.map(item => {
     if(item.Status === "Full_Time" && filter.Full_Time){
-      return (<PersonComponent {...item}/>)
+      return (<PersonComponent key={item.id} {...item}/>)
     }else if(item.Status === "Adjunct" && filter.Adjunct){
-      return(<PersonComponent {...item} />)
+      return(<PersonComponent key={item.id} {...item} />)
     }else if(item.Status === "Staff" && filter.Staff){
-      return(<PersonComponent {...item}/>)
+      return(<PersonComponent key={item.id} {...item}/>)
     }else if(item.Status === "Retired_Departed" && filter.Retired_Departed){
-      return(<PersonComponent {...item}/>)
+      return(<PersonComponent key={item.id} {...item}/>)
     }
   }
   );

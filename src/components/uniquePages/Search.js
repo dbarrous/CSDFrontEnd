@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Title from "../DynamicComponents/Title";
 import styled from "styled-components";
-import useFetch from "../useFetch"
-import  Fuse  from "fuse.js";
+import useFetch from "../useFetch";
+import Fuse from "fuse.js";
 
 const SearchPageWrapper = styled.section`
   width: 100%;
@@ -18,20 +18,6 @@ const SearchSection = styled.section`
   align-items: center;
 `;
 
-const ItemLink = styled(NavLink)`
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  display: block;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: var(--secondary);
-  margin: 1rem;
-  transition: 0.5s;
-  text-decoration: none;
-  :hover {
-    color: var(--primary);
-  }
-`;
 const SearchLink = styled(NavLink)`
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -86,41 +72,35 @@ const StyledButton = styled.button`
 `;
 const StyledForm = styled.form`
   width: 100%;
-  
+
   display: flex;
   margin: 1rem 0;
 `;
-const StyledNotFound = styled.h1`
-font-family:Roboto,sans-serif;
-font-size:2rem;
-color:var(--accent);
-`;
-const StyledLi = styled.li`
-list-style-type: decimal;
-color:var(--primary);
 
+const StyledLi = styled.li`
+  list-style-type: decimal;
+  color: var(--primary);
 `;
 const StyledOl = styled.ol`
-width:600px;
-height:80%;
-@media screen and (max-width:600px){
-  width:90vw;
-
-}
+  width: 600px;
+  height: 80%;
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+  }
 `;
 
 const Results = styled.h3`
-font-size:1.3rem;
-width:100%;
-font-family:Roboto,sans-serif;
-color:var(--secondary);
-text-align:center;
+  font-size: 1.3rem;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  color: var(--secondary);
+  text-align: center;
 `;
 const StyledSpan = styled.span`
-color:var(--secondary);
-font-size:1rem;
+  color: var(--secondary);
+  font-size: 0.75rem;
 `;
-const Search = ({match}) => {
+const Search = ({ match }) => {
   const degrees = useFetch("http://173.244.1.41:1337/degree-Pages");
   const advising = useFetch("http://173.244.1.41:1337/advising-Pages");
   const options = {
@@ -134,38 +114,33 @@ const Search = ({match}) => {
     threshold: 0.6,
     location: 0,
     distance: 100,
-    keys: [
-      "Webpage_Title"
-    ]
+    keys: ["Webpage_Title"],
   };
   let fuse;
   let SearchArray;
 
-  const [keyword,setKeyword ] = React.useState(match.params.id);
-  if(!degrees.isLoading && !advising.isLoading){
-   fuse = new Fuse(degrees.response.concat(advising.response), options);
-   SearchArray = fuse.search(keyword);
+  const [keyword, setKeyword] = React.useState(match.params.id);
+  if (!degrees.isLoading && !advising.isLoading) {
+    fuse = new Fuse(degrees.response.concat(advising.response), options);
+    SearchArray = fuse.search(keyword);
   }
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     SearchArray = fuse.search(keyword);
     console.log(SearchArray);
+  };
 
-  }
-
-  
   return (
     <SearchPageWrapper>
-    
       <SearchSection>
         <Title>Search:</Title>
-        <StyledForm onSubmit={(e)=>handleSubmit(e)}>
+        <StyledForm onSubmit={(e) => handleSubmit(e)}>
           <StyledInput
             name="search"
-            value = {keyword}
-            onClick={()=>console.log()}
-            onChange = {(e)=> setKeyword(e.target.value)}
+            value={keyword}
+            onClick={() => console.log()}
+            onChange={(e) => setKeyword(e.target.value)}
             placeholder="Enter Search Query Here..."
           />
           <br />
@@ -173,13 +148,34 @@ const Search = ({match}) => {
         </StyledForm>
         <br />
         <StyledOl>
-          <Results>Search Results</Results> 
-          {!degrees.isLoading && SearchArray !== undefined ? SearchArray.map(page=><StyledLi
-        ><SearchLink key={page.item.UID} to={`/${page.item.SearchRequirement}/${page.item.UID}`}><StyledSpan>{page.item.SearchRequirement === "courses"? `Degrees & Courses ->` : `Resources & Advising -> `}</StyledSpan> {page.item.Webpage_Title}</SearchLink></StyledLi>):null}
-       </StyledOl>
-       
+          <Results>Search Results</Results>
+          {!degrees.isLoading && SearchArray !== undefined
+            ? SearchArray.map((page) => (
+                <StyledLi>
+                  <SearchLink
+                    key={page.item.UID}
+                    to={`/${page.item.SearchRequirement}/${page.item.UID}`}
+                  >
+                    <StyledSpan>
+                      {page.item.SearchRequirement === "courses"
+                        ? `Degrees & Courses -> ${
+                            page.item.folder_for_degree_page === null
+                              ? ""
+                              : page.item.folder_for_degree_page.folder_name
+                          } -> `
+                        : `Resources & Advising -> ${
+                          page.item.folder_for_advising_page === null
+                              ? ""
+                              : page.item.folder_for_advising_page.Folder_name
+                        } -> `}
+                    </StyledSpan>{" "}
+                    {page.item.Webpage_Title}
+                  </SearchLink>
+                </StyledLi>
+              ))
+            : null}
+        </StyledOl>
       </SearchSection>
-
     </SearchPageWrapper>
   );
 };

@@ -90,14 +90,14 @@ const Icon = styled.span`
 const PersonComponent = props => {
   const history = useHistory();
 
-  console.log(props);
+  
   return (
     <Wrapper status={props.Status}>
       <StyledImageContainer>
         {props.Profile_Picture === null ? (
-          <img src="/images/defaultAvatar.png" />
+          <img src="/images/defaultAvatar.png" alt="Default Avatar"/>
         ) : (
-          <img src={`http://173.244.1.41:1337${props.Profile_Picture.url}`} />
+          <img src={`http://173.244.1.41:1337${props.Profile_Picture.url}`} alt={`${props.Last_Name}'s Profile`}/>
         )}
       </StyledImageContainer>
       <StyledTextContainer>

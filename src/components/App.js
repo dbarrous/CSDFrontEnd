@@ -121,6 +121,7 @@ const FooterFirstHalf = styled.div`
   justify-content: center;
   @media screen and (max-width: 450px) {
     align-items: center;
+    align-text:center;
   }
 `;
 const FooterSecondHalf = styled.div`
@@ -285,7 +286,7 @@ const App = (props) => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <SearchBar value={keyword} onChange={(e)=>setKeyword(e.target.value) } placeholder="&#xF002;" />
+                  <SearchBar value={keyword} onChange={(e)=>setKeyword(e.target.value) }  />
                   <StyledLink exact to={`/search/${keyword}`} activeStyle={activeStyles}>
                     Search
                   </StyledLink>
