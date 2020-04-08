@@ -98,6 +98,8 @@ const StyledMarkdown = styled(Markdown)`
   }
   strong {
     font-weight: bolder;
+    margin-left:4px;
+    margin-right:4px;
   }
 
   table {
@@ -133,6 +135,8 @@ const StyledMarkdown = styled(Markdown)`
   }
   em {
     text-decoration: underline;
+    margin-left:4px;
+    margin-right:4px;
   }
 `;
 

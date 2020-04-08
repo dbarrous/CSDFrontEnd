@@ -52,8 +52,11 @@ const Wrapper = styled.div`
     padding-right: 25px;
   }
   .Side-menu .item .item-title {
-    height: 60px;
-    padding:20px;
+    height: 40px;
+    padding:14px;
+    :hover{text-decoration:underline;
+    text-decoration-color:var(--secondary)
+    }
     // padding-top: 14px;
     // padding-left: 18px;
     // padding-right: 18px;
@@ -75,10 +78,14 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
   .Side-menu .item.item-level-1 > .item-title {
-    height: 45px;
+    height: 40px;
+
+    :hover{
+      text-decoration-color:var(--background);
+    }
   }
   .Side-menu .item.item-level-1 {
-    background: var(--primary);
+    background: var(--secondary);
   }
   .Side-menu .item .children {
     padding-left: 25px;
@@ -103,15 +110,23 @@ const Wrapper = styled.div`
   }
   .Side-menu-default .item.active {
     color: white;
+
+  }
+  .item.active .children.active .item.item-level-2.active span{
+    
+    text-decoration:underline;
+    text-decoration-color:var(--secondary);
   }
   .Side-menu-default .item.active .children {
     color: #b8c7ce;
   }
   .Side-menu-default .item.active > .item-title > a {
     color: white;
+    
   }
   .Side-menu-default .item:hover > .item-title {
     color: white;
+   
   }
   .Side-menu-default .item:hover > .item-title a {
     color: white;
@@ -123,11 +138,10 @@ const Wrapper = styled.div`
   .Side-menu-default .item.item-level-1:hover,
   .Side-menu-default .item.item-level-1.active {
     border-left: 4px solid var(--secondary);
+
   }
 
-  .item.item-level-2.active {
-    color: ;
-  }
+  
 `;
 
 const StyledSideMenu = props => {

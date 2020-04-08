@@ -114,10 +114,10 @@ const Search = ({ match }) => {
     useExtendedSearch: false,
     minMatchCharLength: 1,
     shouldSort: true,
-    threshold: 0.6,
+    threshold: 0.5,
     location: 0,
     distance: 100,
-    keys: ["Webpage_Title"],
+    keys: ["Webpage_Title","Webpage_Text"],
   };
   let fuse;
   let SearchArray;
@@ -164,8 +164,8 @@ const Search = ({ match }) => {
                         ? `Degrees & Courses -> ${
                             page.item.folder_for_degree_page === null
                               ? ""
-                              : page.item.folder_for_degree_page.folder_name
-                          } -> `
+                              : `${page.item.folder_for_degree_page.folder_name} ->`
+                          }  `
                         : `Resources & Advising -> ${
                           page.item.folder_for_advising_page === null
                               ? ""

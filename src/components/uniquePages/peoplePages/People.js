@@ -58,9 +58,12 @@ const SidebarHeader = styled.h4`
 const Check = styled.div`
 grid-area:Check;
 border-radius:3px;
-transition:0.25s;
-background:${props => props.status ? "var(--accent)"
+transition:0;
+background:${props => props.status ? 'url("images/checkmark.png")'
   : "var(--background)"};
+  background-size:cover;
+  background-position:center;
+ 
 `;
 
 const Label = styled.div`
@@ -179,7 +182,7 @@ const People = () => {
         </PeopleSection>
       </PeopleLandingPage>
       <Sidebar>
-        <SidebarHeader>Current Status:</SidebarHeader>
+        <SidebarHeader>Show / Hide</SidebarHeader>
         <AllCheckboxWrapper> 
           <CheckboxWrapper onClick={()=>handleFilter("Full_Time")}>
             <Check status={filter.Full_Time}/>
