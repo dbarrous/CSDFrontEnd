@@ -13,12 +13,14 @@ const SearchPageWrapper = styled.section`
   @media screen and (min-height:900px){
     min-height:1000px;
   }
+  
 `;
 const SearchSection = styled.section`
   display: flex;
   max-width: 75%;
   flex-direction: column;
   align-items: center;
+ 
 `;
 
 const SearchLink = styled(NavLink)`
@@ -34,7 +36,22 @@ const SearchLink = styled(NavLink)`
   :hover {
     color: var(--accent);
   }
-  te
+  
+`;
+
+const ItemLink = styled(NavLink)`
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 1rem;
+  transition: 0.5s;
+  text-decoration: none;
+  :hover {
+    color: var(--primary);
+  }
 `;
 const StyledInput = styled.input`
   width: 50vw;
@@ -69,7 +86,7 @@ const StyledButton = styled.button`
     transition: 0s;
   }
   @media screen and (max-width: 500px) {
-    width: 14vw;
+    width: 16vw;
     font-size: 0.7 rem;
   }
 `;
@@ -78,17 +95,24 @@ const StyledForm = styled.form`
 
   display: flex;
   margin: 1rem 0;
+  
 `;
 
 const StyledLi = styled.li`
   list-style-type: decimal;
   color: var(--primary);
+  font-family:Roboto, sans-serif;
+  @media screen and (max-width:450px){
+    width:80%;
+    
+  }
 `;
 const StyledOl = styled.ol`
   width: 600px;
   height: 80%;
   @media screen and (max-width: 600px) {
-    width: 90vw;
+    width: 70vw;
+    margin:1rem auto;
   }
 `;
 
@@ -98,6 +122,7 @@ const Results = styled.h3`
   font-family: Roboto, sans-serif;
   color: var(--secondary);
   text-align: center;
+ 
 `;
 const StyledSpan = styled.span`
   color: var(--secondary);
@@ -121,11 +146,13 @@ const Search = ({ match }) => {
   };
   let fuse;
   let SearchArray;
+  let runOnce  = false;
 
   const [keyword, setKeyword] = React.useState(match.params.id);
-  if (!degrees.isLoading && !advising.isLoading) {
+  if (!degrees.isLoading && !advising.isLoading && !runOnce) {
     fuse = new Fuse(degrees.response.concat(advising.response), options);
     SearchArray = fuse.search(keyword);
+    runOnce = true;
   }
 
   const handleSubmit = (e) => {
@@ -137,8 +164,8 @@ const Search = ({ match }) => {
   return (
     <SearchPageWrapper>
       <SearchSection>
-        <Title>Search:</Title>
-        <StyledForm onSubmit={(e) => handleSubmit(e)}>
+        <Title>Search Results:</Title>
+        {/* <StyledForm onSubmit={(e) => handleSubmit(e)}>
           <StyledInput
             name="search"
             value={keyword}
@@ -148,13 +175,13 @@ const Search = ({ match }) => {
           />
           <br />
           <StyledButton>Search</StyledButton>
-        </StyledForm>
+        </StyledForm> */}
         <br />
         <StyledOl>
           <Results>Search Results</Results>
           {!degrees.isLoading && SearchArray !== undefined
             ? SearchArray.map((page) => (
-                <StyledLi>
+                <StyledLi key={page.item.UID}>
                   <SearchLink
                     key={page.item.UID}
                     to={`/${page.item.SearchRequirement}/${page.item.UID}`}
@@ -178,6 +205,8 @@ const Search = ({ match }) => {
               ))
             : null}
         </StyledOl>
+        <ItemLink to="/">Go Back</ItemLink>
+
       </SearchSection>
     </SearchPageWrapper>
   );

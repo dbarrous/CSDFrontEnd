@@ -4,7 +4,6 @@ import SideMenu from "react-sidemenu";
 const Wrapper = styled.div`
   .Side-menu {
    
-    max-width: 400px;
     width: 100%;
   }
   .Side-menu .children {

@@ -19,6 +19,9 @@ const PeoplePage = styled.section`
   @media screen and (min-height:900px){
     min-height:1000px;
   }
+  @media screen and (min-width:2000px){
+    grid-template-columns: 15% 85%;
+  }
 `;
 const PeopleLandingPage = styled.article`
   grid-area: People;
@@ -43,7 +46,12 @@ const PersonWrapper = styled.div`
 
 const Sidebar = styled.nav`
   grid-area: Sidebar;
-  background-color: var(--secondary);
+  background-color: var(--primary);
+  @media screen and (max-width: 500px) {
+   
+    padding-bottom:1rem;
+
+  }
   
 `;
 const SidebarHeader = styled.h4`
@@ -99,9 +107,11 @@ grid-template-columns: 10% 90%;
 grid-template-areas:"Check Label";
 cursor:pointer;
 padding:1rem;
+background:var(--secondary);
 :hover{
   background:var(--primary);
 }
+
 `;
 
 

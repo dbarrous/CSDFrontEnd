@@ -154,6 +154,9 @@ const FooterText = styled.a`
   @media screen and (min-width: 1400px) {
     font-size: 1.2rem;
   }
+  @media screen and (max-width:450px){
+    text-align:center;
+  }
 `;
 
 const SearchBar = styled.input`
@@ -162,7 +165,7 @@ const SearchBar = styled.input`
   height: 50%;
   border: none;
   font-family: Roboto, sans-serif, FontAwesome;
-  width: 15%;
+  width: 40%;
   padding: 5px;
   margin-right: 1rem;
   font-size: 1rem;
@@ -170,16 +173,16 @@ const SearchBar = styled.input`
   transition: 0.25s;
   text-align: right;
   ::placeholder {
-    font-size: 1.5rem;
-    color: var(--primary);
+    font-size: 1rem;
+    color: lightgray;
   }
   :active {
-    width: 30%;
+    width: 50%;
     background: #eee;
     color: var(--primary);
   }
   :focus {
-    width: 30%;
+    width: 50%;
     background: #eee;
     color: var(--primary);
     outline: none;
@@ -286,7 +289,7 @@ const App = (props) => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <SearchBar value={keyword} onChange={(e)=>setKeyword(e.target.value) }  />
+                  <SearchBar value={keyword} placeholder={"Enter Search Here..."} onChange={(e)=>setKeyword(e.target.value) }  />
                   <StyledLink exact to={`/search/${keyword}`} activeStyle={activeStyles}>
                     Search
                   </StyledLink>

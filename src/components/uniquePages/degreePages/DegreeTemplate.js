@@ -22,6 +22,9 @@ const DegreesPage = styled.section`
   @media screen and (min-height:900px){
     min-height:1000px;
   }
+  @media screen and (min-width:2000px){
+    grid-template-columns: 15% 85%;
+  }
 `;
 const DegreesLandingPage = styled.article`
   grid-area: DegreesLandingPage;
@@ -44,6 +47,8 @@ const Sidebar = styled.nav`
   background-color: var(--primary);
   @media screen and (max-width: 500px) {
     width: 100%;
+    padding-bottom:1rem;
+
   }
 `;
 const SidebarTitle = styled.h5`

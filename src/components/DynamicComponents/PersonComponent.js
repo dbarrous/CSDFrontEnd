@@ -35,10 +35,16 @@ const Wrapper = styled.div`
   @media screen and (min-height:900px){
     min-height:275px;
   }
+  @media screen and (min-width:2000px){
+    width:40%;
+  }
 `;
 const Name = styled.h3`
   font-size: 1.5rem;
   margin: 1rem;
+  @media screen and (min-width:2000px){
+    font-size:2.5rem;
+  }
 `;
 
 const StyledImageContainer = styled.div`
@@ -57,11 +63,17 @@ const StyledItem = styled.a`
   font-family: Roboto, sans-serif;
   font-size: 0.8rem;
   color:var(--background);
+  @media screen and (min-width:2000px){
+    font-size:1rem;
+  }
 `;
 const Position = styled.h4`
   font-family: Roboto,sans-serif;
   font-size: 0.75rem;
   margin: 1rem;
+  @media screen and (min-width:2000px){
+    font-size:1.25rem;
+  }
 `;
 const StyledSpan = styled.span`
   color: var(--accent);
@@ -80,6 +92,9 @@ const MoreInfo = styled.h4`
   transition: 0.25s;
   :hover {
     color: var(--secondary);
+  }
+  @media screen and (min-width:2000px){
+    font-size:1.20rem;
   }
 `;
 
