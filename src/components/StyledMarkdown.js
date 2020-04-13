@@ -132,7 +132,12 @@ const StyledMarkdown = styled(Markdown)`
     padding: 1rem;
     text-align: center;
     vertical-align: middle;
+    :first-child{
+      width:2rem;
+    }
   }
+  
+  
   em {
     text-decoration: underline;
     margin-left:4px;
