@@ -137,7 +137,11 @@ const StyledMarkdown = styled(Markdown)`
     }
   }
   
-  
+  a{
+    margin-left:4px;
+    margin-right:4px;
+  }
+
   em {
     text-decoration: underline;
     margin-left:4px;
