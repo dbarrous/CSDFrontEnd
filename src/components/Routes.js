@@ -12,6 +12,7 @@ import Search from "./uniquePages/Search";
 import DegreeTemplate from "./uniquePages/degreePages/DegreeTemplate";
 import ResourcesTemplate from "./uniquePages/resourcePages/ResourcesTemplate";
 import PeopleTemplate from "./uniquePages/peoplePages/PeopleTemplate";
+import RetiredDeparted from "./uniquePages/peoplePages/RetiredDeparted"
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Routes = ({ location }) => {
@@ -32,7 +33,7 @@ const Routes = ({ location }) => {
             <Route path="/history" component={History} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/search" component={Search} />
-
+            <Route exact path = "/people/retired-departed" component={RetiredDeparted}/>
             <Route exact path="/search/:id" component={Search} />
             <Route exact path="/courses/:id" component={DegreeTemplate} />
             <Route exact path="/advising/:id" component={ResourcesTemplate} />

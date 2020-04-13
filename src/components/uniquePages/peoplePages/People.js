@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Title from "../../DynamicComponents/Title";
 import useFetch from "../../useFetch";
 import PersonComponent from "../../DynamicComponents/PersonComponent";
+import { NavLink } from "react-router-dom";
+import HomePage from "../homePages/HomePage"
 
 const PeoplePage = styled.section`
   width: 100%;
@@ -67,7 +69,7 @@ const Check = styled.div`
 grid-area:Check;
 border-radius:3px;
 transition:0;
-background:${props => props.status ? 'url("images/checkmark.png")'
+background:${props => props.status ? 'url("/images/checkmark.png")'
   : "var(--background)"};
   background-size:cover;
   background-position:center;
@@ -77,7 +79,7 @@ background:${props => props.status ? 'url("images/checkmark.png")'
 const Label = styled.div`
 grid-area:Label;
 font-family:Roboto, sans-serif;
-font-size:1.25rem;
+font-size:0.85rem;
 display:flex;
 justify-content:flex-start;
 align-items:center;
@@ -98,12 +100,12 @@ overflow:hidden;
 
 const CheckboxWrapper = styled.div`
 width:100%;
-height:1.8rem;
+height:0.80rem;
 transition:0.25s;
 color:white;
 display:grid;
 grid-template-rows:100%;
-grid-template-columns: 10% 90%;
+grid-template-columns: 5% 95%;
 grid-template-areas:"Check Label";
 cursor:pointer;
 padding:1rem;
@@ -114,6 +116,23 @@ background:var(--secondary);
 
 `;
 
+const StyledNavLink = styled(NavLink)`
+width:100%;
+height:0.80rem;
+
+font-family:Roboto, sans-serif;
+font-size:0.85rem;
+text-decoration:none;
+color:var(--background);
+
+transition:0.25s;
+padding:1rem;
+:hover{
+  background:var(--primary);
+  text-decoration:underline;
+  text-decoration-color:var(--secondary);
+}
+`;
 
 
 const People = () => {
@@ -192,7 +211,7 @@ const People = () => {
         </PeopleSection>
       </PeopleLandingPage>
       <Sidebar>
-        <SidebarHeader>Show / Hide</SidebarHeader>
+        <SidebarHeader>Check to Show</SidebarHeader>
         <AllCheckboxWrapper> 
           <CheckboxWrapper onClick={()=>handleFilter("Full_Time")}>
             <Check status={filter.Full_Time}/>
@@ -206,10 +225,13 @@ const People = () => {
             <Check status={filter.Staff}/>
             <Label><h4>Staff</h4></Label>
           </CheckboxWrapper>
-          <CheckboxWrapper onClick={()=>handleFilter("Retired_Departed")}>
+          
+            <StyledNavLink to={"/people/retired-departed"}>Go to Retired / Departed</StyledNavLink>
+
+          {/* <CheckboxWrapper onClick={()=>handleFilter("Retired_Departed")}>
             <Check status={filter.Retired_Departed}/>
             <Label><h4>Retired / Departed</h4></Label>
-          </CheckboxWrapper>
+          </CheckboxWrapper> */}
           {/* <CheckboxWrapper><span className="checkmark"/><input type="checkbox" value="Full_Time" className="checkbox" onChange={(event)=>handleFilter(event.target.value)} name="Full_Time" defaultChecked/>
         <label for="Full_Time">Full Time</label></CheckboxWrapper>
         <CheckboxWrapper><span className="checkmark"/><input type="checkbox" value="Adjunct" className="checkbox" onChange={(event)=>handleFilter(event.target.value)} name="Adjunct" defaultChecked/>

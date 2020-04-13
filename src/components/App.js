@@ -54,11 +54,15 @@ const Footer = styled.section`
 
   grid-template-areas: "FirstHalf SecondHalf";
   @media screen and (max-width: 450px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "FirstHalf" "SecondHalf";
-    min-height: 30vh;
-    line-height: 25px;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr;
+    // grid-template-areas: "FirstHalf" "SecondHalf";
+    // min-height: 30vh;
+    // line-height: 15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
   }
 `;
 
@@ -115,13 +119,14 @@ const FooterFirstHalf = styled.div`
   width: 100%;
   height: 100%;
   grid-area: FirstHalf;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   @media screen and (max-width: 450px) {
     align-items: center;
     align-text:center;
+    margin:0.25rem 0.50rem;
+
   }
 `;
 const FooterSecondHalf = styled.div`
@@ -134,6 +139,7 @@ const FooterSecondHalf = styled.div`
   justify-content: center;
   @media screen and (max-width: 450px) {
     align-items: center;
+    margin:0.25rem 0.50rem;
   }
 `;
 const FooterText = styled.a`
@@ -156,6 +162,7 @@ const FooterText = styled.a`
   }
   @media screen and (max-width:450px){
     text-align:center;
+    margin-top:0px;
   }
 `;
 
