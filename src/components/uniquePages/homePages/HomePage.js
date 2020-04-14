@@ -197,8 +197,6 @@ const HomePage = () => {
               department for inquries about Salem State's Computer Science
               Department.
               <br />
-              <br />
-              Bo Hatfield at: bhatfield@salemstate.edu
             </ItemParagraph>
             <ItemLink to="/contact">Learn More</ItemLink>
           </ItemContainer>
