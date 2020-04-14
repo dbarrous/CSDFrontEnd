@@ -50,7 +50,7 @@ const Sidebar = styled.nav`
   grid-area: Sidebar;
   background-color: var(--primary);
   @media screen and (max-width: 500px) {
-   
+    
     padding-bottom:1rem;
 
   }
@@ -112,6 +112,9 @@ padding:1rem;
 background:var(--secondary);
 :hover{
   background:var(--primary);
+}
+@media screen and (max-width:450px){
+  height:1.25rem;
 }
 
 `;

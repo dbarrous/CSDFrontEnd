@@ -18,8 +18,8 @@ margin:0 auto;
   grid-template-rows: 100%;
   grid-template-columns: 50% 50%;
   grid-template-areas: "MainInfo SecInfo";
-  @media screen and (max-width: 430px) {
-    max-width: 100%;
+  @media screen and (max-width: 450px) {
+    min-width: 100%;
   }
 
   @media screen and (max-width: 800px){

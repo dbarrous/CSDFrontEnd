@@ -23,9 +23,7 @@ const Wrapper = styled.div`
     border-bottom-left-radius: 3px;
   }
 
-  @media screen and(max-width:500px) {
-    width: 100%;
-  }
+  
   box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #b3b3b3;
 
   @media screen and (max-width: 1000px) {
@@ -38,12 +36,21 @@ const Wrapper = styled.div`
   @media screen and (min-width:2000px){
     width:40%;
   }
+  @media screen and (max-width:500px) {
+    width: 100%;
+    height:220px;
+    margin:0.5rem;
+  }
 `;
 const Name = styled.h3`
   font-size: 1.5rem;
   margin: 1rem;
   @media screen and (min-width:2000px){
     font-size:2.5rem;
+  }
+  @media screen and (max-width:450px){
+    font-size:1.25rem;
+    margin:1rem 0.5rem;
   }
 `;
 
@@ -55,6 +62,7 @@ const StyledImageContainer = styled.div`
 const StyledTextContainer = styled.div`
   width: 60%;
   height: 100%;
+
 `;
 const StyledItem = styled.a`
   margin: 0.5rem 1rem;
@@ -66,6 +74,10 @@ const StyledItem = styled.a`
   @media screen and (min-width:2000px){
     font-size:1rem;
   }
+  @media screen and (max-width:450px){
+    margin:0.50rem 0.5rem;
+
+  }
 `;
 const Position = styled.h4`
   font-family: Roboto,sans-serif;
@@ -74,10 +86,17 @@ const Position = styled.h4`
   @media screen and (min-width:2000px){
     font-size:1.25rem;
   }
+  @media screen and (max-width:450px){
+    margin:0.75rem 0.5rem;
+  }
+
 `;
 const StyledSpan = styled.span`
   color: var(--accent);
   font-weight: bolder;
+  @media screen and (max-width:450px){
+    font-size:0.70rem;
+  }
 `;
 const MoreInfo = styled.h4`
   text-align: left;
@@ -95,6 +114,9 @@ const MoreInfo = styled.h4`
   }
   @media screen and (min-width:2000px){
     font-size:1.20rem;
+  }
+  @media screen and (max-width:450px){
+    margin:0.75rem 0.5rem;
   }
 `;
 
