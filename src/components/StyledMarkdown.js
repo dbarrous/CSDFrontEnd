@@ -140,6 +140,8 @@ const StyledMarkdown = styled(Markdown)`
   a{
     margin-left:4px;
     margin-right:4px;
+    target-name:new;
+    target-new:tab;
   }
 
   em {

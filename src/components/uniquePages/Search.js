@@ -13,14 +13,13 @@ const SearchPageWrapper = styled.section`
   @media screen and (min-height:900px){
     min-height:1000px;
   }
-  
 `;
 const SearchSection = styled.section`
   display: flex;
   max-width: 75%;
   flex-direction: column;
   align-items: center;
- 
+
 `;
 
 const SearchLink = styled(NavLink)`
@@ -165,17 +164,6 @@ const Search = ({ match }) => {
     <SearchPageWrapper>
       <SearchSection>
         <Title>Search Results:</Title>
-        {/* <StyledForm onSubmit={(e) => handleSubmit(e)}>
-          <StyledInput
-            name="search"
-            value={keyword}
-            onClick={() => console.log()}
-            onChange={(e) => setKeyword(e.target.value)}
-            placeholder="Enter Search Query Here..."
-          />
-          <br />
-          <StyledButton>Search</StyledButton>
-        </StyledForm> */}
         <br />
         <StyledOl>
           <Results>Search Results</Results>

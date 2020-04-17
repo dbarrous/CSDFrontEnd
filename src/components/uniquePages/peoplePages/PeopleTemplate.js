@@ -117,7 +117,7 @@ const PeopleTemplate = ({ match }) => {
         <MainInfo>
         {res.isLoading ? (
           <img
-            style={{ width: "100%" }}
+            style   ={{ width: "100%" }}
             src="/images/pulse.gif"
             alt="loading animation"
           />
