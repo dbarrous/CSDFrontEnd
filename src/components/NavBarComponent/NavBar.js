@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavLogo from "./NavBarComponents/NavLogo";
 import NavTabs from "./NavBarComponents/NavTabs";
 import { HamburgerArrow } from "react-animated-burgers";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const NavBarContainer = styled.section`
   width: 100%;
@@ -84,24 +84,46 @@ const SearchBar = styled.input`
     color: var(--primary);
     outline: none;
   }
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      font-size: 1.5rem;
+      :active {
+        font-size: 1.2rem;
+        width: 30%;
+        background: #eee;
+        color: var(--primary);
+      }
+      :focus {
+        width: 30%;
+        font-size: 1.2rem;
+        background: #eee;
+        color: var(--primary);
+        outline: none;
+      }
+    }
+  }
 `;
-const NavBar = props => {
+const NavBar = (props) => {
   const [searchbar, setSearchbar] = React.useState("");
   const history = useHistory();
-  const handleSubmit =(key)=>{
-    if(key === "Enter"){
-      
+  const handleSubmit = (key) => {
+    if (key === "Enter") {
       history.push(`/search/${searchbar}`);
       setSearchbar("");
     }
-  }
+  };
   return (
     <NavBarContainer>
       <LogoWrapper>
         <NavLogo />
       </LogoWrapper>
       <SearchWrapper>
-        <SearchBar placeholder="&#xF002;" value={searchbar} onChange={(event)=>setSearchbar(event.target.value)} onKeyDown={event=>handleSubmit(event.key)} />
+        <SearchBar
+          placeholder="&#xF002;"
+          value={searchbar}
+          onChange={(event) => setSearchbar(event.target.value)}
+          onKeyDown={(event) => handleSubmit(event.key)}
+        />
       </SearchWrapper>
       <NavTabsWrapper>
         <NavTabs />
@@ -109,9 +131,7 @@ const NavBar = props => {
       <CheeseburgerMenuWrapper>
         <HamburgerArrow
           isActive={props.menuToggle}
-          toggleButton={() =>
-            props.setMenuToggle(props.menuToggle === false ? true : false)
-          }
+          toggleButton={() => props.setMenuToggle(props.menuToggle === false)}
           buttonColor="#001f5b"
           barColor="#eee"
         />

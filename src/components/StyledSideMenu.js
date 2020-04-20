@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import SideMenu from "react-sidemenu";
-const Wrapper = styled.div`
+
+let Wrapper;
+
+Wrapper = styled.div`
   .Side-menu {
-   
     width: 100%;
   }
   .Side-menu .children {
@@ -52,9 +54,10 @@ const Wrapper = styled.div`
   }
   .Side-menu .item .item-title {
     height: 40px;
-    padding:14px;
-    :hover{text-decoration:underline;
-    text-decoration-color:var(--secondary)
+    padding: 14px;
+    :hover {
+      text-decoration: underline;
+      text-decoration-color: var(--secondary);
     }
     // padding-top: 14px;
     // padding-left: 18px;
@@ -79,8 +82,8 @@ const Wrapper = styled.div`
   .Side-menu .item.item-level-1 > .item-title {
     height: 40px;
 
-    :hover{
-      text-decoration-color:var(--background);
+    :hover {
+      text-decoration-color: var(--background);
     }
   }
   .Side-menu .item.item-level-1 {
@@ -109,23 +112,19 @@ const Wrapper = styled.div`
   }
   .Side-menu-default .item.active {
     color: white;
-
   }
-  .item.active .children.active .item.item-level-2.active span{
-    
-    text-decoration:underline;
-    text-decoration-color:var(--secondary);
+  .item.active .children.active .item.item-level-2.active span {
+    text-decoration: underline;
+    text-decoration-color: var(--secondary);
   }
   .Side-menu-default .item.active .children {
     color: #b8c7ce;
   }
   .Side-menu-default .item.active > .item-title > a {
     color: white;
-    
   }
   .Side-menu-default .item:hover > .item-title {
     color: white;
-   
   }
   .Side-menu-default .item:hover > .item-title a {
     color: white;
@@ -137,19 +136,16 @@ const Wrapper = styled.div`
   .Side-menu-default .item.item-level-1:hover,
   .Side-menu-default .item.item-level-1.active {
     border-left: 4px solid var(--secondary);
-
   }
-
-  
 `;
 
-const StyledSideMenu = props => {
+const StyledSideMenu = ({ activeItem, items, onMenuItemClick }) => {
   return (
     <Wrapper>
       <SideMenu
-        activeItem={props.activeItem}
-        items={props.items}
-        onMenuItemClick={props.onMenuItemClick}
+        activeItem={activeItem}
+        items={items}
+        onMenuItemClick={onMenuItemClick}
       />
     </Wrapper>
   );

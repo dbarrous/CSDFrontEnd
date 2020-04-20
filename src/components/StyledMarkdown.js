@@ -6,7 +6,7 @@ const StyledMarkdown = styled(Markdown)`
     max-width: 100%;
     height: 70%;
     margin: 1rem auto;
-    
+
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 
@@ -17,6 +17,7 @@ const StyledMarkdown = styled(Markdown)`
       width: 100%;
     }
   }
+
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -78,7 +79,7 @@ const StyledMarkdown = styled(Markdown)`
     line-height: 1.5rem;
     text-align: left;
     margin: 1.5rem;
-    display:flex;
+    display: flex;
   }
   ul {
     width: 60%;
@@ -98,8 +99,8 @@ const StyledMarkdown = styled(Markdown)`
   }
   strong {
     font-weight: bolder;
-    margin-left:4px;
-    margin-right:4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 
   table {
@@ -132,22 +133,22 @@ const StyledMarkdown = styled(Markdown)`
     padding: 1rem;
     text-align: center;
     vertical-align: middle;
-    :first-child{
-      width:2rem;
+    :first-child {
+      width: 2rem;
     }
   }
-  
-  a{
-    margin-left:4px;
-    margin-right:4px;
-    target-name:new;
-    target-new:tab;
+
+  a {
+    margin-left: 4px;
+    margin-right: 4px;
+    target-name: new;
+    target-new: tab;
   }
 
   em {
     text-decoration: underline;
-    margin-left:4px;
-    margin-right:4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 `;
 

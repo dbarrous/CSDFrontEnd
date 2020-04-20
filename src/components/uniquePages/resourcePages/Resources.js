@@ -15,14 +15,14 @@ const ResourcesPage = styled.section`
   grid-template-rows: 100%;
   grid-template-areas: "Sidebar ResourceLandingPage";
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1050px) {
     display: flex;
     flex-direction: column;
   }
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
-  @media screen and (min-width:2000px){
+  @media screen and (min-width: 2000px) {
     grid-template-columns: 15% 85%;
   }
 `;
@@ -38,15 +38,20 @@ const Section = styled.section`
   max-width: 90%;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 1050px) {
+    min-height: 600px;
+  }
+  @media screen and (min-width: 1920px) {
+    min-height: 1000px;
+  }
 `;
 
 const Sidebar = styled.nav`
   grid-area: Sidebar;
   background-color: var(--primary);
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1050px) {
     width: 100%;
-    padding-bottom:1rem;
-
+    padding-bottom: 1rem;
   }
 `;
 const SidebarTitle = styled.h5`
@@ -81,21 +86,21 @@ const Resources = () => {
   const history = useHistory();
 
   if (res.isLoading === false && degree.isLoading === false) {
-    res.response.map(page => {
+    res.response.map((page) => {
       object.push({
         label: page.Folder_name,
         value: page.Folder_name,
-        children: page.advising_pages.map(item => ({
+        children: page.advising_pages.map((item) => ({
           label: item.Webpage_Title,
-          value: item.UID
-        }))
+          value: item.UID,
+        })),
       });
     });
-    degree.response.map(page => {
+    degree.response.map((page) => {
       if (page.folder_for_advising_page === null && page.id !== 1) {
         object.push({
           label: page.Webpage_Title,
-          value: page.UID
+          value: page.UID,
         });
       }
     });
@@ -125,10 +130,11 @@ const Resources = () => {
           <AttachmentWrapper>
             {degree.isLoading
               ? null
-              : degree.response[0].Extras.map(item => (
+              : degree.response[0].Extras.map((item) => (
                   <Upload
                     url={`http://173.244.1.41:1337${item.Upload.url}`}
                     ext={item.Upload.ext}
+                    key={item.id}
                   >
                     {item.Alternative_Text}
                   </Upload>
@@ -141,7 +147,7 @@ const Resources = () => {
           <SidebarTitle>Links</SidebarTitle>
           <StyledSideMenu
             items={object}
-            onMenuItemClick={value => history.push(`/advising/${value}`)}
+            onMenuItemClick={(value) => history.push(`/advising/${value}`)}
           />
         </Sidebar>
       )}

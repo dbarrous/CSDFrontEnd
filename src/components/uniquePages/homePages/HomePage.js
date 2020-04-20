@@ -18,8 +18,8 @@ const Home = styled.div`
   @media screen and (max-width: 400px) {
     grid-template-rows: 15% 85%;
   }
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
 `;
 const News = styled.div`
@@ -84,6 +84,7 @@ const NewsWrapper = styled.div`
   @media screen and (max-width: 755px) {
     width: 495px;
     height: 350px;
+    margin-bottom: 4rem;
   }
   @media screen and (max-width: 420px) {
     width: 400px;
@@ -107,6 +108,10 @@ const LinksWrapper = styled.div`
   }
   @media screen and (max-width: 1600px) {
     width: 90vw;
+  }
+  @media screen and(max-width: 900px) {
+    width: 80vw;
+    margin-top: 4rem;
   }
   @media screen and (max-width: 430px) {
     width: 100vw;
@@ -136,7 +141,6 @@ const ItemParagraph = styled.p`
   font-weight: regular;
   color: var(--primary);
   margin-top: 1rem;
-
 `;
 
 const ItemImage = styled.img`

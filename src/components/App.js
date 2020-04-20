@@ -59,10 +59,10 @@ const Footer = styled.section`
     // grid-template-areas: "FirstHalf" "SecondHalf";
     // min-height: 30vh;
     // line-height: 15px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -124,9 +124,8 @@ const FooterFirstHalf = styled.div`
   justify-content: center;
   @media screen and (max-width: 450px) {
     align-items: center;
-    align-text:center;
-    margin:0.25rem 0.50rem;
-
+    align-text: center;
+    margin: 0.25rem 0.5rem;
   }
 `;
 const FooterSecondHalf = styled.div`
@@ -139,7 +138,7 @@ const FooterSecondHalf = styled.div`
   justify-content: center;
   @media screen and (max-width: 450px) {
     align-items: center;
-    margin:0.25rem 0.50rem;
+    margin: 0.25rem 0.5rem;
   }
 `;
 const FooterText = styled.a`
@@ -149,20 +148,20 @@ const FooterText = styled.a`
   margin-left: 0.8rem;
   margin-right: 0.8rem;
   margin-top: 2px;
-  text-decoration:none;
-  transition:0.25s;
-  text-decoration-color:var(--accent);
+  text-decoration: none;
+  transition: 0.25s;
+  text-decoration-color: var(--accent);
 
-  :hover{
-    text-decoration:underline;
-    text-decoration-color:var(--accent);
+  :hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
   }
   @media screen and (min-width: 1400px) {
     font-size: 1.2rem;
   }
-  @media screen and (max-width:450px){
-    text-align:center;
-    margin-top:0px;
+  @media screen and (max-width: 450px) {
+    text-align: center;
+    margin-top: 0px;
   }
 `;
 
@@ -209,6 +208,9 @@ const SearchBar = styled.input`
       outline: none;
     }
   }
+  @media screen and (min-width: 600px) {
+    width: 30%;
+  }
 `;
 
 const App = (props) => {
@@ -216,10 +218,9 @@ const App = (props) => {
   const [keyword, setKeyword] = useState("");
   const activeStyles = {
     textDecoration: "underline",
-    textDecorationColor: "#eee"
+    textDecorationColor: "#eee",
   };
 
-  
   return (
     <>
       <Router>
@@ -242,8 +243,13 @@ const App = (props) => {
               </Main>
               <Footer>
                 <FooterFirstHalf>
-                  <FooterText href="https://goo.gl/maps/3jQrbZWQAn3tieth7">Salem State University<br/>
-                  Computer Science Department<br/>MH 207<br/>
+                  <FooterText href="https://goo.gl/maps/3jQrbZWQAn3tieth7">
+                    Salem State University
+                    <br />
+                    Computer Science Department
+                    <br />
+                    MH 207
+                    <br />
                     352 Lafayette Street, Salem, MA 01970-5353
                   </FooterText>
                 </FooterFirstHalf>
@@ -255,7 +261,9 @@ const App = (props) => {
                   <FooterText href="tel:(978) 542-6979">
                     Department Chairperson: (978) 542-6979
                   </FooterText>
-                  <FooterText href="tel:(978) 542-7048">Department Fax: (978) 542-7048</FooterText>
+                  <FooterText href="tel:(978) 542-7048">
+                    Department Fax: (978) 542-7048
+                  </FooterText>
                 </FooterSecondHalf>
               </Footer>
             </Grid>
@@ -296,8 +304,16 @@ const App = (props) => {
                   </StyledLink>
                 </StyledLi>
                 <StyledLi>
-                  <SearchBar value={keyword} placeholder={"Enter Search Here..."} onChange={(e)=>setKeyword(e.target.value) }  />
-                  <StyledLink exact to={`/search/${keyword}`} activeStyle={activeStyles}>
+                  <SearchBar
+                    value={keyword}
+                    placeholder={"Enter Search Here..."}
+                    onChange={(e) => setKeyword(e.target.value)}
+                  />
+                  <StyledLink
+                    exact
+                    to={`/search/${keyword}`}
+                    activeStyle={activeStyles}
+                  >
                     Search
                   </StyledLink>
                 </StyledLi>
