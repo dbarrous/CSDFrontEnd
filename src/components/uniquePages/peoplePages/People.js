@@ -4,7 +4,6 @@ import Title from "../../DynamicComponents/Title";
 import useFetch from "../../useFetch";
 import PersonComponent from "../../DynamicComponents/PersonComponent";
 import { NavLink } from "react-router-dom";
-import HomePage from "../homePages/HomePage";
 
 const PeoplePage = styled.section`
   width: 100%;
@@ -69,9 +68,10 @@ const Check = styled.div`
   height: 12px;
   transition: none;
   background: ${(props) =>
-    props.status ? 'url("/images/checkmark.png")' : "var(--background)"};
+    props.status
+      ? 'url("/images/checkmark.png") center'
+      : "var(--background) center"};
   background-size: cover;
-  background: center;
 `;
 
 const Label = styled.div`
