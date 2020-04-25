@@ -82,8 +82,8 @@ const AttachmentHeader = styled.h4`
 `;
 
 const ResourcesTemplate = ({ match }) => {
-  const res = useFetch("http://173.244.1.41:1337/folder-for-advising-pages");
-  const degree = useFetch("http://173.244.1.41:1337/advising-Pages");
+  const res = useFetch("http://api.salemstate.edu/folder-for-advising-pages");
+  const degree = useFetch("http://api.salemstate.edu/advising-Pages");
   const object = [];
   const history = useHistory();
   let title = "";

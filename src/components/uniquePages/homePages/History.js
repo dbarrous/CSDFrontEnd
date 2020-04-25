@@ -38,7 +38,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const History = () => {
-  const res = useFetch("http://173.244.1.41:1337/main-pages/3");
+  const res = useFetch("http://api.salemstate.edu/main-pages/3");
   return (
     <HistoryPageWrapper>
       <HistorySection>

@@ -39,7 +39,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const Mission = () => {
-  const res = useFetch("http://173.244.1.41:1337/main-pages/1");
+  const res = useFetch("http://api.salemstate.edu/main-pages/1");
 
   return (
     <MissionPageWrapper>

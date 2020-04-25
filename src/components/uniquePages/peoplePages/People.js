@@ -128,7 +128,7 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const People = () => {
-  const res = useFetch("http://173.244.1.41:1337/people");
+  const res = useFetch("http://api.salemstate.edu/people");
 
   const [filter, setFilter] = React.useState({
     Full_Time: true,

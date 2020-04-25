@@ -48,7 +48,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const RetiredDeparted = () => {
-  const res = useFetch("http://173.244.1.41:1337/retired-departeds/1");
+  const res = useFetch("http://api.salemstate.edu/retired-departeds/1");
 
   return (
     <PageWrapper>

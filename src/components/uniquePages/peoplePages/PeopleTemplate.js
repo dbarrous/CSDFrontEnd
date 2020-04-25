@@ -109,7 +109,7 @@ width:100%;
 
 `;
 const PeopleTemplate = ({ match }) => {
-  const res = useFetch(`http://173.244.1.41:1337/people/${match.params.id}`);
+  const res = useFetch(`http://api.salemstate.edu/people/${match.params.id}`);
  
   return (
     <PeoplePageWrapper>

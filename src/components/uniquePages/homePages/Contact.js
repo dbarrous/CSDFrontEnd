@@ -38,7 +38,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const Contact = () => {
-  const res = useFetch("http://173.244.1.41:1337/main-pages/2");
+  const res = useFetch("http://api.salemstate.edu/main-pages/2");
   return (
     <ContactPageWrapper>
       <ContactSection>

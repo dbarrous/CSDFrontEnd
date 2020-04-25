@@ -81,8 +81,8 @@ const AttachmentHeader = styled.h4`
   margin-top: 1.5rem;
 `;
 const DegreesTemplate = ({ match }) => {
-  const res = useFetch("http://173.244.1.41:1337/folder-for-degree-pages");
-  const degree = useFetch("http://173.244.1.41:1337/degree-pages");
+  const res = useFetch("http://api.salemstate.edu/folder-for-degree-pages");
+  const degree = useFetch("http://api.salemstate.edu/degree-pages");
   const object = [];
   const history = useHistory();
   let title = "";
