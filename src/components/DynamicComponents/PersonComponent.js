@@ -131,7 +131,7 @@ const PersonComponent = (props) => {
           <img src="/images/defaultAvatar.png" alt="Default Avatar" />
         ) : (
           <img
-            src={`http://173.244.1.41:1337${props.Profile_Picture.url}`}
+            src={`http://api.salemstate.edu${props.Profile_Picture.url}`}
             alt={`${props.Last_Name}'s Profile`}
           />
         )}
