@@ -142,7 +142,7 @@ const ResourcesTemplate = ({ match }) => {
               ? null
               : extras.map((item) => (
                   <Upload
-                    url={`http://173.244.1.41:1337${item.Upload.url}`}
+                    url={`http://api.salemstate.edu${item.Upload.url}`}
                     ext={item.Upload.ext}
                     key={item.id}
                   >
