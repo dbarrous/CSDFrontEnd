@@ -10,8 +10,8 @@ const PageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
 `;
 const Section = styled.section`
@@ -22,13 +22,13 @@ const Section = styled.section`
     max-width: 100%;
   }
 
-  ul{
-      text-align:center;
-      list-style-type:none;
-        li{
-            margin:1rem;
-            font-size:1.2rem;
-        }
+  ul {
+    text-align: center;
+    list-style-type: none;
+    li {
+      margin: 1rem;
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -48,7 +48,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const RetiredDeparted = () => {
-  const res = useFetch("http://api.salemstate.edu/retired-departeds/1");
+  const res = useFetch("https://api.salemstate.edu/retired-departeds/1");
 
   return (
     <PageWrapper>

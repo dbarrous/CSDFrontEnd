@@ -82,8 +82,8 @@ const AttachmentHeader = styled.h4`
 `;
 
 const ResourcesTemplate = ({ match }) => {
-  const res = useFetch("http://api.salemstate.edu/folder-for-advising-pages");
-  const degree = useFetch("http://api.salemstate.edu/advising-Pages");
+  const res = useFetch("https://api.salemstate.edu/folder-for-advising-pages");
+  const degree = useFetch("https://api.salemstate.edu/advising-Pages");
   const object = [];
   const history = useHistory();
   let title = "";
@@ -142,7 +142,7 @@ const ResourcesTemplate = ({ match }) => {
               ? null
               : extras.map((item) => (
                   <Upload
-                    url={`http://api.salemstate.edu${item.Upload.url}`}
+                    url={`https://api.salemstate.edu${item.Upload.url}`}
                     ext={item.Upload.ext}
                     key={item.id}
                   >

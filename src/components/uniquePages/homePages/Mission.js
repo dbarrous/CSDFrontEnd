@@ -10,8 +10,8 @@ const MissionPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
 `;
 const MissionSection = styled.section`
@@ -39,7 +39,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const Mission = () => {
-  const res = useFetch("http://api.salemstate.edu/main-pages/1");
+  const res = useFetch("https://api.salemstate.edu/main-pages/1");
 
   return (
     <MissionPageWrapper>

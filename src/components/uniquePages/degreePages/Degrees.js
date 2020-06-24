@@ -81,8 +81,8 @@ const AttachmentHeader = styled.h4`
 `;
 
 const Degrees = () => {
-  const res = useFetch("http://api.salemstate.edu/folder-for-degree-pages");
-  const degree = useFetch("http://api.salemstate.edu/degree-pages");
+  const res = useFetch("https://api.salemstate.edu/folder-for-degree-pages");
+  const degree = useFetch("https://api.salemstate.edu/degree-pages");
   const object = [];
   const history = useHistory();
 
@@ -133,7 +133,7 @@ const Degrees = () => {
               ? null
               : degree.response[0].Extras.map((item) => (
                   <Upload
-                    url={`http://api.salemstate.edu${item.Upload.url}`}
+                    url={`https://api.salemstate.edu${item.Upload.url}`}
                     ext={item.Upload.ext}
                     key={item.id}
                   >

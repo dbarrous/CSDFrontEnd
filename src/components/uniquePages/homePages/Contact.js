@@ -10,8 +10,8 @@ const ContactPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
 `;
 const ContactSection = styled.section`
@@ -38,7 +38,7 @@ const ItemLink = styled(NavLink)`
 `;
 
 const Contact = () => {
-  const res = useFetch("http://api.salemstate.edu/main-pages/2");
+  const res = useFetch("https://api.salemstate.edu/main-pages/2");
   return (
     <ContactPageWrapper>
       <ContactSection>

@@ -165,7 +165,7 @@ const HomePage = () => {
     <Home>
       <News>
         <NewsWrapper>
-          <StyledIframe src="http://weblab.salemstate.edu/~coordenador/ToolBox/carousel.php" />
+          <StyledIframe src="https://cs6.salemstate.edu/coordenador/ToolBox/carousel.php" />
         </NewsWrapper>
       </News>
       <Links>

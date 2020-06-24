@@ -10,8 +10,8 @@ const SearchPageWrapper = styled.section`
   min-height: 600px;
   display: flex;
   justify-content: center;
-  @media screen and (min-height:900px){
-    min-height:1000px;
+  @media screen and (min-height: 900px) {
+    min-height: 1000px;
   }
 `;
 const SearchSection = styled.section`
@@ -19,7 +19,6 @@ const SearchSection = styled.section`
   max-width: 75%;
   flex-direction: column;
   align-items: center;
-
 `;
 
 const SearchLink = styled(NavLink)`
@@ -35,7 +34,6 @@ const SearchLink = styled(NavLink)`
   :hover {
     color: var(--accent);
   }
-  
 `;
 
 const ItemLink = styled(NavLink)`
@@ -94,16 +92,14 @@ const StyledForm = styled.form`
 
   display: flex;
   margin: 1rem 0;
-  
 `;
 
 const StyledLi = styled.li`
   list-style-type: decimal;
   color: var(--primary);
-  font-family:Roboto, sans-serif;
-  @media screen and (max-width:450px){
-    width:80%;
-    
+  font-family: Roboto, sans-serif;
+  @media screen and (max-width: 450px) {
+    width: 80%;
   }
 `;
 const StyledOl = styled.ol`
@@ -111,7 +107,7 @@ const StyledOl = styled.ol`
   height: 80%;
   @media screen and (max-width: 600px) {
     width: 70vw;
-    margin:1rem auto;
+    margin: 1rem auto;
   }
 `;
 
@@ -121,15 +117,14 @@ const Results = styled.h3`
   font-family: Roboto, sans-serif;
   color: var(--secondary);
   text-align: center;
- 
 `;
 const StyledSpan = styled.span`
   color: var(--secondary);
   font-size: 0.75rem;
 `;
 const Search = ({ match }) => {
-  const degrees = useFetch("http://173.244.1.41:1337/degree-Pages");
-  const advising = useFetch("http://173.244.1.41:1337/advising-Pages");
+  const degrees = useFetch("https://api.salemstate.edu/degree-Pages");
+  const advising = useFetch("https://api.salemstate.edu/advising-Pages");
   const options = {
     isCaseSensitive: false,
     findAllMatches: false,
@@ -141,11 +136,11 @@ const Search = ({ match }) => {
     threshold: 0.5,
     location: 0,
     distance: 100,
-    keys: ["Webpage_Title","Webpage_Text"],
+    keys: ["Webpage_Title", "Webpage_Text"],
   };
   let fuse;
   let SearchArray;
-  let runOnce  = false;
+  let runOnce = false;
 
   const [keyword, setKeyword] = React.useState(match.params.id);
   if (!degrees.isLoading && !advising.isLoading && !runOnce) {
@@ -182,10 +177,11 @@ const Search = ({ match }) => {
                               : `${page.item.folder_for_degree_page.folder_name} ->`
                           }  `
                         : `Resources & Advising -> ${
-                          page.item.folder_for_advising_page === null
+                            page.item.folder_for_advising_page === null
                               ? ""
                               : `${page.item.folder_for_advising_page.Folder_name} -> 
-                        `} `}
+                        `
+                          } `}
                     </StyledSpan>{" "}
                     {page.item.Webpage_Title}
                   </SearchLink>
@@ -194,7 +190,6 @@ const Search = ({ match }) => {
             : null}
         </StyledOl>
         <ItemLink to="/">Go Back</ItemLink>
-
       </SearchSection>
     </SearchPageWrapper>
   );
